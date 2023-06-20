@@ -5,7 +5,7 @@
     </div>
     <div
       class="w-1/3
-    bg-base-content top-1/4 left-1/4 pointer-events-none absolute -left-40 -top-40 aspect-square rounded-full border-2 opacity-5 blur-3xl
+    bg-base-content top-1/4 left-1/4 pointer-events-none absolute aspect-square rounded-full border-2 opacity-5 blur-3xl
     "
     >
       mid

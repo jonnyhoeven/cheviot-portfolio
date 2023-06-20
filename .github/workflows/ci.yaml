@@ -22,16 +22,16 @@ jobs:
       # Install packages
       - run: npm ci
 
+
+
       # Generate prisma client & push to db
       #- run: echo "DATABASE_URL=$DATABASE_URL" > .env
       #- run: cat .env
       - run: npx prisma db push
       - run: npx prisma generate
-
       # Run linting and typechecking
       - run: npm run lint
       - run: npm run typecheck
-
       # Run tests
       - run: npm run test
 

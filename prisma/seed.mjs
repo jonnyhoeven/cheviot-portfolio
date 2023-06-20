@@ -55,7 +55,7 @@ const fakePostTypes = () =>
   }))
 
 const fakeBadges = (length = 3) =>
-  Array.from({ length }).map((_k, i) => {
+  Array.from({ length }).map((_k, _i) => {
     const title = faker.lorem.words(2)
 
     return {
@@ -79,7 +79,7 @@ const fakeBadges = (length = 3) =>
   })
 
 const fakePosts = (length = 10) =>
-  Array.from({ length }).map((_k, i) => {
+  Array.from({ length }).map((_k, _i) => {
     const title = faker.lorem.sentence()
 
     return {

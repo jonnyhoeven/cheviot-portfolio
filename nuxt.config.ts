@@ -1,3 +1,5 @@
+import { defineNuxtConfig } from 'nuxt/config'
+
 export default defineNuxtConfig({
   telemetry: false,
   devtools: {
@@ -19,8 +21,5 @@ export default defineNuxtConfig({
   extends: ['@sidebase/core'],
   typescript: {
     shim: false
-  },
-  server: {
-    port: process.env.PORT || 3000
   }
 })
