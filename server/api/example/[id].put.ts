@@ -1,3 +1,4 @@
+/*
 import type { H3Event } from 'h3'
 
 export default eventHandler(async (event: H3Event) => {
@@ -10,5 +11,6 @@ export default eventHandler(async (event: H3Event) => {
     id,
     ...body
   }
-  return prisma.example.upsert({ where: { id }, create: data, update: data })
+  return prisma.pst.upsert({ where: { id }, create: data, update: data })
 })
+*/
