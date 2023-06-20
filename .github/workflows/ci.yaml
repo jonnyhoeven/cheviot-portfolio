@@ -11,7 +11,8 @@ jobs:
   testCodebase:
     runs-on: ubuntu-latest
     env:
-      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      DATABASE_URL: TESTING
+      TEST: TEST2
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js 16.14.2
@@ -20,6 +21,7 @@ jobs:
           node-version: 16.14.2
 
       - run: echo $DATABASE_URL
+      - run: echo "$TEST"
       # Install packages
       #- run: npm ci
 
