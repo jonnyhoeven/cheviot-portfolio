@@ -10,14 +10,14 @@ jobs:
   # This job will run linting, typechecking and tests on your codebase
   testCodebase:
     runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js 16.14.2
         uses: actions/setup-node@v3
         with:
           node-version: 16.14.2
-        env:
-          DATABASE_URL: postgres://test:testing@0.0.0.0:5432/db
 
       # Install packages
       - run: npm ci
