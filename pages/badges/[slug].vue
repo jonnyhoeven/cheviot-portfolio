@@ -29,7 +29,7 @@ const {
         <div
           class="mx-10 my-10 grid grid-cols-1 gap-10 md:grid-cols-1 lg:grid-cols-2"
         >
-          <post-item v-for="post in badge?.posts" :key="post.id" :post="post" class="w-120 card bg-base-200 shadow-xl" />
+          <!--          <post-item v-for="post in badge?.posts" :key="post.id" :post="post" class="w-120 card bg-base-200 shadow-xl" />-->
         </div>
       </div>
     </div>

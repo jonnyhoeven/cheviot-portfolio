@@ -11,6 +11,7 @@ export default defineNuxtPlugin(() => {
     transformer: superjson,
     links: [
       httpBatchLink({
+        // @ts-expect-error
         url: '/api/trpc'
       })
     ]
