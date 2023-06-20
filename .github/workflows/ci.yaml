@@ -11,13 +11,13 @@ jobs:
   testCodebase:
     runs-on: ubuntu-latest
     steps:
-        env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
       - uses: actions/checkout@v3
       - name: Use Node.js 16.14.2
         uses: actions/setup-node@v3
         with:
           node-version: 16.14.2
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
       # Install packages
       - run: npm ci
