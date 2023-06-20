@@ -20,6 +20,7 @@ export default defineNuxtConfig({
   },
   extends: ['@sidebase/core'],
   typescript: {
-    shim: false
+    shim: false,
+    typeCheck: true
   }
 })
