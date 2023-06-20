@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Post, Badge, PostType } from '@prisma/client'
+
 const props = defineProps<{
   badge: Badge & {
     posts:(

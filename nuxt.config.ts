@@ -1,8 +1,7 @@
+import { defineNuxtConfig } from 'nuxt/config'
+
 export default defineNuxtConfig({
   telemetry: false,
-  devtools: {
-    enabled: false
-  },
   runtimeConfig: {
     version: '0.0.1',
     // The private keys which are only available server-side
@@ -18,9 +17,7 @@ export default defineNuxtConfig({
   },
   extends: ['@sidebase/core'],
   typescript: {
-    shim: false
-  },
-  server: {
-    port: process.env.PORT || 3000
+    shim: false,
+    typeCheck: true
   }
 })

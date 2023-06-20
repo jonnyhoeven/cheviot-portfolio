@@ -1,10 +1,10 @@
 <script setup lang="ts">
-const { $client } = useNuxtApp();
+const { $client } = useNuxtApp()
 const {
   data: badges,
   pending,
-  error,
-} = $client.badge.useQuery({ limit: 10, posts: false });
+  error
+} = $client.badge.useQuery({ limit: 10, posts: false })
 </script>
 
 <template>

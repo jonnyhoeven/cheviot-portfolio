@@ -1,11 +1,11 @@
 <script setup lang="ts">
-const route = useRoute();
+const route = useRoute()
 </script>
 
 <template>
   <div>
     <page-header>Posts detail</page-header>
-    {{route.params.slug.toString()}}
+    {{ route.params.slug.toString() }}
     <post-list
       :frontpage="false"
       :limit="1"

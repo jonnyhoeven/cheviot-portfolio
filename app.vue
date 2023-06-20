@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { $client } = useNuxtApp()
-const { data, pending, error } = $client.globalSetting.useQuery()
+const { pending, error } = $client.globalSetting.useQuery()
 useHead({
   title: 'jcodes.nl - cloud run test deployment'
 })
