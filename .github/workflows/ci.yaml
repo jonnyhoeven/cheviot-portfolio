@@ -16,12 +16,14 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16.14.2
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
       # Install packages
       - run: npm ci
 
       # Generate prisma client & push to db
-      - run: echo "DATABASE_URL=file:./db.sqlite" > .env
+      #- run: echo "DATABASE_URL=file:./db.sqlite" > .env
       - run: npx prisma db push
       - run: npx prisma generate
 
