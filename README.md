@@ -6,7 +6,7 @@ This is a [sidebase cheviot](https://sidebase.io/) app created by running `npm c
 - Database models, migrations, queries and easy DB-switching via Prisma
 - Deep Prisma integration: Use the client in your endpoints via nuxt-prisma, Prisma client is auto-generated for npm run dev and other commands and more
 - Frontend- and Backend data-transformation via nuxt-parse and zod
-- In-memory development SQL-database via sqlite3
+- Postgress container for local development via docker-compose
 - Linting via eslint
 - Test management, Test UI, component snapshotting via vitest
 - Component tests via test-library/vue
