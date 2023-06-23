@@ -1,4 +1,7 @@
 # JustMe.dev
+
+This is my public website, hosted on [JustMe.dev](https://www.justme.dev/).
+
 [![CI](https://github.com/jonnyhoeven/cheviot-portfolio/actions/workflows/ci.yaml/badge.svg)](https://github.com/jonnyhoeven/cheviot-portfolio/actions/workflows/ci.yaml)
 
 
