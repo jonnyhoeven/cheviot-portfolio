@@ -33,7 +33,7 @@ jobs:
         run: nci
 
       - name: Push Prisma schema
-        run: nr db:seed
+        run: nr db:push
 
       - name: Generate Prisma types
         run: nr db:generate
