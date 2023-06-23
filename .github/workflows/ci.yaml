@@ -13,8 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
-      #NEXTAUTH_URL: ${{ env.NEXTAUTH_URL }}
-      #AUTH_ORIGIN: ${{ env.AUTH_ORIGIN }}
+      #NEXTAUTH_URL: ${{ vars.NEXTAUTH_URL }}
+      #AUTH_ORIGIN: ${{ vars.AUTH_ORIGIN }}
       #AUTH_SECRET: ${{ secrets.AUTH_SECRET }}
       #GITHUB_CLIENT_ID: ${{ secrets.GITHUB_CLIENT_ID }}
       #GITHUB_CLIENT_SECRET: ${{ secrets.GITHUB_CLIENT_SECRET }}
@@ -49,8 +49,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
-      NEXTAUTH_URL: ${{ env.NEXTAUTH_URL }}
-      AUTH_ORIGIN: ${{ env.AUTH_ORIGIN }}
+      NEXTAUTH_URL: ${{ vars.NEXTAUTH_URL }}
+      AUTH_ORIGIN: ${{ vars.AUTH_ORIGIN }}
       AUTH_SECRET: ${{ secrets.AUTH_SECRET }}
       GITHUB_CLIENT_ID: ${{ secrets.GITHUB_CLIENT_ID }}
       GITHUB_CLIENT_SECRET: ${{ secrets.GITHUB_CLIENT_SECRET }}
