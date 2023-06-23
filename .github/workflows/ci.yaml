@@ -44,29 +44,14 @@ jobs:
       - name: Typecheck
         run: nr typecheck
 
-  build:
-
-    runs-on: ubuntu-latest
-    env:
-      DATABASE_URL: ${{ secrets.DATABASE_URL }}
-      NEXTAUTH_URL: ${{ vars.NEXTAUTH_URL }}
-      AUTH_ORIGIN: ${{ vars.AUTH_ORIGIN }}
-      AUTH_SECRET: ${{ secrets.AUTH_SECRET }}
-      GITHUB_CLIENT_ID: ${{ secrets.GITHUB_CLIENT_ID }}
-      GITHUB_CLIENT_SECRET: ${{ secrets.GITHUB_CLIENT_SECRET }}
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Use Node.js 16.14.2
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16.14.2
-
-      - name: Setup
-        run: npm i -g @antfu/ni
-
-      - name: Install
-        run: nci
-
       - name: Build
         run: nr build
+
+      - name: Run development check
+        run: "(timeout 60 nr dev & (sleep 5 && curl --fail localhost:3000)) && echo Run development check successful"
+
+      - name: Run production check
+        run: "(timeout 60 nr preview & (sleep 5 && curl --fail localhost:3000)) && echo Run production check successful"
+
+      #- name: Test
+      #  run: nr test
