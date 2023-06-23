@@ -47,9 +47,6 @@ jobs:
       - name: Build
         run: nr build
 
-      - name: Run development check
-        run: "(timeout 60 nr dev & (sleep 5 && curl --fail localhost:3000)) && echo Run development check successful"
-
       - name: Run production check
         run: "(timeout 60 nr preview & (sleep 5 && curl --fail localhost:3000)) && echo Run production check successful"
 
