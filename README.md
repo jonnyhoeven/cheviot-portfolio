@@ -1,4 +1,6 @@
-# something-app
+# JustMe.dev
+[![CI](https://github.com/jonnyhoeven/cheviot-portfolio/actions/workflows/ci.yaml/badge.svg)](https://github.com/jonnyhoeven/cheviot-portfolio/actions/workflows/ci.yaml)
+
 
 This is a [sidebase merino](https://sidebase.io/) app created by running `npm create sidebase@latest`. This project uses the following technologies for a great developer- and user-experience:
 - [TypeScript](https://www.typescriptlang.org/)

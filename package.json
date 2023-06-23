@@ -12,7 +12,7 @@
     "db:stop": "docker-compose down",
     "db:push": "npx prisma db push",
     "db:seed": "npx prisma db seed",
-    "db:reset": "npx prisma db push --force-reset ",
+    "db:reset": "npx prisma db push --force-reset",
     "db:recreate": "npm run db:reset && npm run db:seed",
     "db:studio": "npx prisma studio",
     "preview": "nuxt preview",
