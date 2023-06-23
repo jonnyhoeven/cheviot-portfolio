@@ -1,21 +1,14 @@
-# cheviot-portfolio-app
+# something-app
 
-This is a [sidebase cheviot](https://sidebase.io/) app created by running `npm create sidebase@latest`. This project uses the following technologies for a great developer- and user-experience:
+This is a [sidebase merino](https://sidebase.io/) app created by running `npm create sidebase@latest`. This project uses the following technologies for a great developer- and user-experience:
 - [TypeScript](https://www.typescriptlang.org/)
 - [Nuxt 3](https://nuxt.com)
-- Database models, migrations, queries and easy DB-switching via Prisma
-- Deep Prisma integration: Use the client in your endpoints via nuxt-prisma, Prisma client is auto-generated for npm run dev and other commands and more
-- Frontend- and Backend data-transformation via nuxt-parse and zod
-- Postgress container for local development via docker-compose
-- Linting via eslint
-- Test management, Test UI, component snapshotting via vitest
-- Component tests via test-library/vue
-- Nuxt 3 native API testing via @nuxt/test-utils
-- Code coverage via c8
-- CSS utilities via TailwindCSS
-- CSS components via Naive UI
-- Type checking in script and template via Volar / vue-tsc
-- Code editor configuration via .editorconfig files and a portable .settings/ folder whith best-practice VS Code settings and extensions for Vue 3 / Nuxt 3 development
+- Prisma ORM
+- nuxt-auth
+- tRPC 10
+- Tailwind CSS
+- Naive UI
+- GitHub Actions based CI
 
 ## How to get going?
 
@@ -28,7 +21,10 @@ Some tasks you should probably do in the beginning are:
 - [ ] install the Vue Volar extension
 - [ ] enable [Volar takeover mode](https://nuxt.com/docs/getting-started/installation#prerequisites) to ensure a smooth editor setup
 - [ ] [install Nuxt 3 devtools](https://github.com/nuxt/devtools#installation) if you want to use them
-
+- [ ] Prisma: Edit your `prisma/prisma.schema` to your liking
+- [ ] Prisma: Run `npx prisma db push` to sync the schema to your database & generate the Prisma Client
+- [ ] Auth: Configure your auth providers to the [NuxtAuthHandler](./server/api/auth/[...].ts)
+- [ ] Auth, optional: Enable global protection by setting `enableGlobalAppMiddleware: true` in [your nuxt.config.ts](./nuxt.config.ts). Delete the local middleware in the [protected.vue](./pages/protected.vue) page if you do
 
 ### Setup
 

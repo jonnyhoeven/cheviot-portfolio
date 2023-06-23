@@ -8,6 +8,5 @@ const { data: posts, pending, error } = $client.test.useQuery({})
     <debug-view v-if="true">
       {{ posts }}
     </debug-view>
-    {{ posts }}
   </loading-error>
 </template>

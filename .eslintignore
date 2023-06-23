@@ -1,10 +1,11 @@
-dist
-public
-
 # ignore generate imports
 auto-imports.d.ts
 components.d.ts
+nuxt.d.ts
 
-dist
+# nuxt and other artefacts
+.nuxt
 .output
 node_modules
+dist
+public

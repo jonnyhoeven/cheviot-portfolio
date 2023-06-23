@@ -59,7 +59,7 @@ const fakeBadges = (length = 3) =>
     const title = faker.lorem.words(2)
 
     return {
-      slug: faker.helpers.slugify(title).toLowerCase() + faker.datatype.uuid(),
+      slug: faker.helpers.slugify(title).toLowerCase() + faker.string.uuid(),
       published: faker.datatype.boolean(),
       frontpage: faker.datatype.boolean(),
       title,
@@ -70,7 +70,7 @@ const fakeBadges = (length = 3) =>
       subtitle: faker.lorem.sentence(),
       intro: p(3),
       content: p(7),
-      imageUrl: faker.image.imageUrl(),
+      imageUrl: faker.image.url(),
       imageAlt: faker.lorem.sentence(),
       linkUrl: faker.internet.url(),
       linkLabel: faker.lorem.sentence(),
@@ -83,14 +83,14 @@ const fakePosts = (length = 10) =>
     const title = faker.lorem.sentence()
 
     return {
-      slug: faker.helpers.slugify(title).toLowerCase() + faker.datatype.uuid(),
+      slug: faker.helpers.slugify(title).toLowerCase() + faker.string.uuid(),
       published: faker.datatype.boolean(),
       frontpage: faker.datatype.boolean(),
       title,
       subtitle: faker.lorem.sentence(),
       intro: p(3),
       content: p(6),
-      imageUrl: faker.image.imageUrl(),
+      imageUrl: faker.image.url(),
       imageAlt: faker.lorem.sentence(),
       linkUrl: faker.internet.url(),
       linkLabel: faker.lorem.sentence(),

@@ -1,15 +1,14 @@
 <script setup lang="ts">
-const { $client } = useNuxtApp()
-const { pending, error } = $client.globalSetting.useQuery()
 useHead({
-  title: 'jcodes.nl - cloud run test deployment'
+  title: 'JustMe.dev Jonny van der Hoeven',
+  link: [{ rel: 'icon', type: 'image/png', href: 'favicon.ico' }]
 })
 </script>
 
 <template>
-  <loading-error :error="error" :pending="pending">
+  <div>
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
-  </loading-error>
+  </div>
 </template>

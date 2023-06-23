@@ -1,38 +1,51 @@
-name: Node.js CI
+
+name: CI
 
 on:
   push:
-    branches: [dev]
+    branches: [ dev ]
   pull_request:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
-  # This job will run linting, typechecking and tests on your codebase
-  testCodebase:
+  lint:
+
     runs-on: ubuntu-latest
-    env:
-      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
     steps:
       - uses: actions/checkout@v3
+
       - name: Use Node.js 16.14.2
         uses: actions/setup-node@v3
         with:
           node-version: 16.14.2
-      # Install packages
-      - run: npm ci
 
-      # Generate prisma client & push to db
-      - run: npx prisma db push
-      - run: npx prisma generate
+      - name: Setup
+        run: npm i -g @antfu/ni
 
-      # Run linting and typechecking
-      - run: npm run lint
-      - run: npm run typecheck
-      # Run tests
-      # - run: npm run test
+      - name: Install
+        run: nci
 
-      # start app in dev mode and load `/`-index page
-      #- run: "(timeout 60 npm run dev & (sleep 10 && curl --fail localhost:3000)) && echo Run development check successful"
+      - name: Lint
+        run: nr lint
 
-      # build & start app in production mode and load `/`-index page
-      #- run: "npm run build && (timeout 60 npm run preview & (sleep 10 && curl --fail localhost:3000)) && echo Run production check successful"
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js 16.14.2
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.14.2
+
+      - name: Setup
+        run: npm i -g @antfu/ni
+
+      - name: Install
+        run: nci
+
+      - name: Build
+        run: nr build
