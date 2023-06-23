@@ -39,7 +39,7 @@ export const appRouter = router({
             slug: { equals: input.slug?.toString() },
             type: { is: { slug: { equals: input.type?.toString() } } }
           },
-          include: { type: true, badges: { where: { published: true } } },
+          include: { type: true },
           take: input.limit
         }
         const data = await ctx.prisma.post.findMany(q)
@@ -49,37 +49,6 @@ export const appRouter = router({
       } catch (e) { throwError(e) }
     }),
 
-  badge: publicProcedure
-    .input(
-      z.object({
-        slug: z.string().nullish(),
-        posts: z.boolean().optional(),
-        limit: z.number().min(1).max(100).default(10)
-      })
-    )
-    .query(async ({ input, ctx }) => {
-      try {
-        const q = {
-          where: {
-            published: true,
-            slug: { equals: input.slug?.toString() }
-          },
-          include: {
-            posts: input.posts
-              ? {
-                  where: { published: true },
-                  include: { type: true, badges: { where: { published: true } } }
-                }
-              : {}
-          },
-          take: input.limit
-        }
-        const data = await ctx.prisma.badge.findMany(q)
-        if (!data || data.length === 0) { throwNotFound() }
-        logToConsole('Badge', q, data.length)
-        return data
-      } catch (e) { throwError(e) }
-    }),
   globalSetting: publicProcedure.query(async ({ ctx }) => {
     try {
       const menuItems = await ctx.prisma.menuItem.findMany()
@@ -111,7 +80,7 @@ export const appRouter = router({
             slug: { equals: input.slug?.toString() },
             type: { is: { slug: { equals: input.type?.toString() } } }
           },
-          include: { type: true, badges: { where: { published: true } } },
+          include: { type: true },
           take: input.limit
         }
         const data = await ctx.prisma.post.findMany(q)
