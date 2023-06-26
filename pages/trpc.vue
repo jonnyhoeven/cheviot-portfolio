@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { $client } = useNuxtApp()
-const { data: posts, pending, error } = $client.post.useQuery({})
+const { data: posts, pending, error } = $client.test.useQuery({ limit: 1 })
 </script>
 
 <template>

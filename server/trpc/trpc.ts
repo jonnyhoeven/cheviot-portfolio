@@ -7,17 +7,38 @@
  * @see https://trpc.io/docs/v10/router
  * @see https://trpc.io/docs/v10/procedures
  */
-import { initTRPC } from '@trpc/server'
+import { initTRPC, TRPCError } from '@trpc/server'
 import superjson from 'superjson'
+import { Role } from '@prisma/client'
 import { Context } from '~/server/trpc/context'
 
 const t = initTRPC.context<Context>().create({
   transformer: superjson
 })
 
-/**
- * Unprotected procedure
- **/
+const isAuthed = t.middleware(async (opts) => {
+  const user = await opts.ctx.user
+  if (
+    !(user?.role === Role.USER ||
+      user?.role === Role.ADMIN) &&
+    user?.active) {
+    return opts.next({ ctx: { user } })
+  }
+  throw new TRPCError({ code: 'UNAUTHORIZED' })
+})
+
+const isAdmin = t.middleware(async (opts) => {
+  const user = await opts.ctx.user
+
+  if (user?.role === Role.ADMIN && user?.active) {
+    return opts.next({ ctx: { user } })
+  }
+  throw new TRPCError({ code: 'UNAUTHORIZED' })
+})
+
 export const publicProcedure = t.procedure
+export const protectedProcedure = t.procedure.use(isAuthed)
+export const adminProcedure = t.procedure.use(isAdmin)
+
 export const router = t.router
 export const middleware = t.middleware

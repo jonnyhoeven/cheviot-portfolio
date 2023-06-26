@@ -1,6 +1,6 @@
 import { z } from 'zod'
 import { TRPCError } from '@trpc/server'
-import { publicProcedure, router } from '../trpc'
+import { publicProcedure, protectedProcedure, adminProcedure, router } from '../trpc'
 
 const throwNotFound = () => {
   throw new TRPCError({
@@ -62,7 +62,7 @@ export const appRouter = router({
       return { strings, menuItems }
     } catch (e) { throwError(e) }
   }),
-  test: publicProcedure
+  test: adminProcedure
     .input(
       z.object({
         frontpage: z.boolean().optional(),
@@ -86,7 +86,7 @@ export const appRouter = router({
         const data = await ctx.prisma.post.findMany(q)
         if (!data || data.length === 0) { throwNotFound() }
         logToConsole('Test', q, data.length)
-        return data
+        return { data }
       } catch (e) { throwError(e) }
     })
 })

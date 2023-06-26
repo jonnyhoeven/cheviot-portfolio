@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-  title: 'JustMe.dev Jonny van der Hoeven',
+  title: 'JustMe.dev',
   link: [
     { rel: 'icon', href: 'favicon.ico', sizes: 'any' },
     { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
@@ -10,9 +10,12 @@ useHead({
 </script>
 
 <template>
-  <div>
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
-  </div>
+  <NConfigProvider>
+    <n-message-provider>
+      <NGlobalStyle />
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
+    </n-message-provider>
+  </NConfigProvider>
 </template>

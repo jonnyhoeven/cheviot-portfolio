@@ -11,6 +11,20 @@ datasource db {
   relationMode = "prisma"
 }
 
+model User {
+  id    Int @id @default(autoincrement())
+  email String @unique
+  name  String?
+  image String?
+  role  Role @default(USER)
+  active Boolean @default(true)
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
 model PostType {
   id        Int      @id @default(autoincrement())
   slug      String   @unique
