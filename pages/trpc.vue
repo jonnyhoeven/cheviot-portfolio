@@ -1,11 +1,13 @@
 <script setup lang="ts">
+definePageMeta({ middleware: 'auth' })
+
 const { $client } = useNuxtApp()
-const { data: posts, pending, error } = $client.test.useQuery({ limit: 1 })
+const { data: posts, pending, error } = $client.post.useQuery({ limit: 1 })
 </script>
 
 <template>
   <loading-error :pending="pending" :error="error">
-    <debug-view v-if="true">
+    <debug-view>
       {{ posts }}
     </debug-view>
   </loading-error>

@@ -8,6 +8,7 @@ module.exports = {
     './nuxt.config.{js,ts}',
     './app.vue'
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -16,7 +17,6 @@ module.exports = {
     }
   },
   corePlugins: {
-    preflight: false
-  },
-  plugins: [require('@tailwindcss/typography')]
+    preflight: true
+  }
 }

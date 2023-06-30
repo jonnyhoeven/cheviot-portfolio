@@ -18,12 +18,10 @@ const t = initTRPC.context<Context>().create({
 
 const isAuthed = t.middleware(async (opts) => {
   const user = await opts.ctx.user
-  if (
-    !(user?.role === Role.USER ||
-      user?.role === Role.ADMIN) &&
-    user?.active) {
+  if ((user?.role === Role.USER || user?.role === Role.ADMIN) && user?.active) {
     return opts.next({ ctx: { user } })
   }
+
   throw new TRPCError({ code: 'UNAUTHORIZED' })
 })
 
