@@ -9,7 +9,7 @@ const p = (lenght = 4) => faker.lorem.paragraphs(lenght)
 
 const fakePostTypes = () =>
   tArr.map(t => ({
-    slug: faker.helpers.slugify(t).toLowerCase(),
+    slug: faker.helpers.slugify(t).toLowerCase() + faker.string.uuid(),
     published: true,
     title: t,
     color: faker.internet.color(),
@@ -37,7 +37,18 @@ const fakePosts = (length = 10) =>
       imageAlt: faker.lorem.sentence(),
       linkUrl: faker.internet.url(),
       linkLabel: faker.lorem.sentence(),
-      createdAt: faker.date.past()
+      createdAt: faker.date.past(),
+      user: {
+        connectOrCreate: {
+          where: { email: 'jonny@justme.dev' },
+          create: {
+            email: 'jonny@justme.dev',
+            role: 'ADMIN',
+            name: 'Jonny',
+            active: true
+          }
+        }
+      }
     }
   })
 

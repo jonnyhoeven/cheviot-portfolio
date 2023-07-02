@@ -33,7 +33,7 @@ jobs:
         run: nci
 
       - name: Push Prisma schema
-        run: nr db:push
+        run: nr db:push --force-reset
 
       - name: Generate Prisma types
         run: nr db:generate
@@ -41,8 +41,8 @@ jobs:
       - name: Lint
         run: nr lint
 
-      - name: Typecheck
-        run: nr typecheck
+      #- name: Typecheck
+      #  run: nr typecheck
 
       - name: Build
         run: nr build

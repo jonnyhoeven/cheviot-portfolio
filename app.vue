@@ -1,14 +1,7 @@
-<script setup lang="ts">
-useHead({
-  title: 'JustMe.dev Jonny van der Hoeven',
-  link: [{ rel: 'icon', type: 'image/png', href: 'favicon.ico' }]
-})
-</script>
-
 <template>
-  <div>
+  <n-message-provider>
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
-  </div>
+  </n-message-provider>
 </template>
