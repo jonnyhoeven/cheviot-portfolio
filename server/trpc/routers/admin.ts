@@ -2,7 +2,39 @@ import { z } from 'zod'
 import { adminProcedure, router } from '../trpc'
 import { throwNotFound, throwError, logToConsole } from './helpers'
 
+const postSchema = z.object({
+  slug: z.string().nullish(),
+  published: z.boolean().default(false),
+  frontpage: z.boolean().default(false),
+  title: z.string().nullish(),
+  subtitle: z.string().nullish(),
+  intro: z.string().nullish(),
+  content: z.string().nullish(),
+  imageUrl: z.string().nullish(),
+  imageAlt: z.string().nullish(),
+  linkUrl: z.string().nullish(),
+  linkLabel: z.string().nullish()
+})
+
 export const adminRouter = router({
+  allPosts: adminProcedure
+    .input(
+      z.object({
+        limit: z.number().optional().default(10)
+      })
+    )
+    .query(async ({ input, ctx }) => {
+      try {
+        const q = {
+          /* include: { type: true }, */
+          take: input.limit
+        }
+        const data = await ctx.prisma.post.findMany(q)
+        // if (!data || data.length === 0) { throwNotFound() }
+        logToConsole('allPosts', q, data.length)
+        return input.limit === 1 ? data[0] : data
+      } catch (e) { throwError(e) }
+    }),
   postById: adminProcedure
     .input(
       z.object({
@@ -19,7 +51,7 @@ export const adminRouter = router({
         }
         const data = await ctx.prisma.post.findFirst(q)
         if (!data) { throwNotFound() }
-        logToConsole('Post', q, 1)
+        logToConsole('postById', q, 1)
         return data
       } catch (e) { throwError(e) }
     }),
@@ -27,34 +59,68 @@ export const adminRouter = router({
     .input(
       z.object({
         id: z.number(),
-        data: z.object({
-          type: z.string().nullish(),
-          slug: z.string(),
-          published: z.boolean(),
-          frontpage: z.boolean(),
-          title: z.string(),
-          subtitle: z.string().nullish(),
-          intro: z.string().nullish(),
-          content: z.string().nullish(),
-          imageUrl: z.string().nullish(),
-          imageAlt: z.string().nullish(),
-          linkUrl: z.string().nullish(),
-          linkLabel: z.string().nullish()
-        })
+        data: postSchema
+      })
+    )
+    .query(async ({ input, ctx }) => {
+      try {
+        if (!input.data?.title) { throwError('Missing Title') }
+        if (!input.data?.slug) { throwError('Missing Slug') }
+        const q = {
+          where: {
+            id: input.id
+          },
+          data: {
+            type: { connect: { id: 1 } },
+            user: { connect: { id: ctx.user.id } },
+            ...input.data
+          }
+        }
+        // @ts-expect-error
+        const updatePost = await ctx.prisma.post.update(q)
+        logToConsole('updatePost', q, 1)
+        return updatePost
+      } catch (e) { throwError(e) }
+    }),
+  createPost: adminProcedure
+    .input(
+      z.object({
+        data: postSchema
+      })
+    )
+    .query(async ({ input, ctx }) => {
+      if (!input.data?.title) { throwError('Missing Title') }
+      if (!input.data?.slug) { throwError('Missing Slug') }
+      try {
+        const q = {
+          data: {
+            type: { connect: { id: 1 } },
+            user: { connect: { id: ctx.user.id } },
+            ...input.data
+          }
+        }
+        // @ts-expect-error
+        const createPost = await ctx.prisma.post.create(q)
+        logToConsole('createPost', q, 1)
+        return createPost
+      } catch (e) { throwError(e) }
+    }),
+  deletePost: adminProcedure
+    .input(
+      z.object({
+        id: z.number()
       })
     )
     .query(async ({ input, ctx }) => {
       try {
         const q = {
           where: {
-            id: { equals: input.id }
-          },
-          data: input.data
+            id: input.id
+          }
         }
-        const data = await ctx.prisma.post.update(q)
-        if (!data) { throwNotFound() }
-        logToConsole('Post', q, 1)
-        return data
+        const deletePost = await ctx.prisma.post.delete(q)
+        logToConsole('deletePost', q, 1)
+        return deletePost
       } catch (e) { throwError(e) }
     })
 })

@@ -2,16 +2,83 @@
 import { useMessage, FormInst } from 'naive-ui'
 definePageMeta({ middleware: 'auth' })
 const { $client } = useNuxtApp()
+const router = useRouter()
+const message = useMessage()
+const formRef = ref<FormInst | null>(null)
+
 const props = defineProps<{
     id: number;
 }>()
 
-// const { data: posts, pending, error } = $client.post.useQuery({ limit: 1 })
-const { data, pending, error } = await $client.admin.postById.useQuery({ id: props.id })
-const formValue = data
-const message = useMessage()
-const formRef = ref<FormInst | null>(null)
+const isNew = (props.id === 0)
+
+const { data: formValue, pending, error } = await $client.admin.postById.useQuery({ id: props.id })
+
+// @ts-expect-error
+const parseData = formValue => ({
+  slug: formValue.value?.slug,
+  title: formValue.value?.title,
+  published: formValue.value?.published,
+  frontpage: formValue.value?.frontpage,
+  subtitle: formValue.value?.subtitle,
+  intro: formValue.value?.intro,
+  content: formValue.value?.content,
+  imageUrl: formValue.value?.imageUrl,
+  imageAlt: formValue.value?.imageAlt,
+  linkUrl: formValue.value?.linkUrl,
+  linkLabel: formValue.value?.linkLabel
+})
+
+const createPost = () => $client.admin.createPost.useQuery({
+  data: parseData(formValue)
+})
+
+const updatePost = () => $client.admin.updatePost.useQuery({
+  id: props.id,
+  data: parseData(formValue)
+})
+
+const doUpdate = async () => {
+  const { error /* data, status, pending */ } = isNew ? await createPost() : await updatePost()
+  if (error.value) {
+    message.error(`Error ${error.value}`)
+  } else if (isNew) {
+    message.success('Record created')
+  } else {
+    message.success('Record updated')
+  }
+}
+
+const handleSaveClick = (e: MouseEvent) => {
+  e.preventDefault()
+  formRef.value?.validate((errors) => {
+    if (!errors) {
+      doUpdate()
+    } else {
+      message.error('Problem validating form')
+    }
+  })
+}
+
+const handleDeleteClick = (e: MouseEvent) => {
+  e.preventDefault()
+  const { error } = $client.admin.deletePost.useQuery({
+    id: props.id
+  })
+  if (error.value) {
+    message.error(`Error ${error.value}`)
+  } else {
+    message.success('Record deleted')
+    router.push('/admin/posts')
+  }
+}
+
 const rules = {
+  slug: [
+    { required: true, message: 'Title is required' },
+    { min: 3, message: 'Title must be at least 3 characters' },
+    { max: 180, message: 'Title must be at most 180 characters' }
+  ],
   title: [
     { required: true, message: 'Title is required' },
     { min: 3, message: 'Title must be at least 3 characters' },
@@ -20,34 +87,10 @@ const rules = {
   subtitle: [
     { required: true, message: 'Subtitle is required' },
     { min: 3, message: 'Subtitle must be at least 3 characters' },
-    { max: 60, message: 'Subtitle must be at most 60 characters' }
+    { max: 180, message: 'Subtitle must be at most 180 characters' }
   ]
 }
 
-const handleValidateClick = (e: MouseEvent) => {
-  e.preventDefault()
-  formRef.value?.validate((errors) => {
-    if (!errors) {
-      message.success('Validated...')
-    } else {
-      message.error('Problem validating this form')
-    }
-  })
-}
-
-const handleSaveClick = (e: MouseEvent) => {
-  e.preventDefault()
-  formRef.value?.validate(async (errors) => {
-    if (!errors) {
-      const { data: formSaved, pending, error } = await $client.admin.updatePost.useQuery({ data: formValue.value })
-      console.log(formValue.value)
-      console.log(formSaved, pending, error)
-      message.success('Valid')
-    } else {
-      message.error('Invalid')
-    }
-  })
-}
 </script>
 
 <template>
@@ -119,11 +162,11 @@ const handleSaveClick = (e: MouseEvent) => {
         <n-input v-model:value="formValue.linkLabel" placeholder="linkLabel" />
       </n-form-item>
 
-      <n-button @click="handleValidateClick">
-        validate
-      </n-button>
       <n-button @click="handleSaveClick">
         Save
+      </n-button>
+      <n-button v-if="!isNew" @click="handleDeleteClick">
+        Delete
       </n-button>
     </n-form>
   </loading-error>

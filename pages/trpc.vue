@@ -2,7 +2,7 @@
 definePageMeta({ middleware: 'auth' })
 
 const { $client } = useNuxtApp()
-const { data: posts, pending, error } = $client.post.useQuery({ limit: 1 })
+const { data: posts, pending, error } = $client.public.post.useQuery({ limit: 1 })
 </script>
 
 <template>

@@ -9,7 +9,7 @@ const p = (lenght = 4) => faker.lorem.paragraphs(lenght)
 
 const fakePostTypes = () =>
   tArr.map(t => ({
-    slug: faker.helpers.slugify(t).toLowerCase(),
+    slug: faker.helpers.slugify(t).toLowerCase() + faker.string.uuid(),
     published: true,
     title: t,
     color: faker.internet.color(),

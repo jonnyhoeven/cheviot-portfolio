@@ -8,6 +8,7 @@ const props = defineProps<{
 
 <template>
   <iframe
+    class="rounded-xl shadow-xl"
     width="560"
     height="315"
     :src="src"

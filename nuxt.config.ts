@@ -16,9 +16,6 @@ export default defineNuxtConfig({
     'nuxt-gtag',
     '@pinia/nuxt'
   ],
-  colorMode: {
-    classSuffix: ''
-  },
   build: {
     transpile: [
       'trpc-nuxt'
