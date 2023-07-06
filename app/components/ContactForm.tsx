@@ -1,21 +1,34 @@
 "use client";
 
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { isArray } from "util";
 
 export default function ContactForm() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [content, setContent] = useState("");
   const [view, setView] = useState("send");
-
+  const [user, setUser] = useState({});
   const supabase = createClientComponentClient();
+
+  useEffect(() => {
+    const getUser = async () => {
+      const { data } = await supabase.auth.getUser();
+      if (data && data.user) {
+        console.log(data);
+        setUser(data.user);
+        if (data.user.email) setEmail(data.user.email);
+      }
+    };
+
+    getUser();
+  }, [supabase, setUser]);
 
   const handleSendMessage = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const { data, error } = await supabase
-      .from("messages")
-      .insert({ email, content });
+    await supabase.from("messages").insert({ email, content });
 
     setView("thank-you");
   };
