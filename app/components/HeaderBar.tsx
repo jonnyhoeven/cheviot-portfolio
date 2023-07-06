@@ -18,9 +18,11 @@ export default async function HeaderBar() {
           🍒
         </Link>
         <div>
+          <Link href="/contact">Contact</Link>
+        </div>
+        <div>
           {user ? (
             <div className="flex items-center gap-4">
-              Hey, {user.email}!
               <LogoutButton />
             </div>
           ) : (
