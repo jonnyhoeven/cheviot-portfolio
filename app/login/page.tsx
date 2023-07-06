@@ -43,12 +43,24 @@ export default function Login() {
           access_type: "offline",
           prompt: "consent",
         },
+        redirectTo: `${location.origin}/auth/callback`,
       },
     });
   };
 
+  const handleGitHubSignIn = async () => {
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: "github",
+      options: {
+        redirectTo: `${location.origin}/auth/callback`,
+      },
+    });
+
+    console.log("signin,", data, error);
+  };
+
   return (
-    <div className="flex-1 flex flex-col w-full px-8 sm:max-w-md justify-center gap-2">
+    <div className="animate-in flex-1 flex flex-col w-full px-8 sm:max-w-md justify-center gap-2">
       {view === "check-email" ? (
         <p className="text-center text-foreground">
           Check <span className="font-bold">{email}</span> to continue signing
@@ -90,6 +102,12 @@ export default function Login() {
                 className="bg-gray-700 rounded px-4 py-2 text-white mb-6"
               >
                 Sign In with Google
+              </button>
+              <button
+                onClick={handleGitHubSignIn}
+                className="bg-gray-700 rounded px-4 py-2 text-white mb-6"
+              >
+                Sign In with GitHub
               </button>
               <p className="text-sm text-center">
                 Don't have an account?
