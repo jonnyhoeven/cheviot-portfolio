@@ -3,6 +3,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "copy-static": "cp -r .next/static .next/standalone/.next && cp -r ./public .next/standalone",
     "start": "node .next/standalone/server.js",
     "lint": "next lint"
   },

@@ -2,7 +2,6 @@
 
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useState, useEffect } from "react";
-import { isArray } from "util";
 
 export default function ContactForm() {
   const [email, setEmail] = useState("");
