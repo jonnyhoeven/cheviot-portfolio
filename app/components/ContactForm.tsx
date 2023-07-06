@@ -5,11 +5,9 @@ import { useState, useEffect } from "react";
 import { isArray } from "util";
 
 export default function ContactForm() {
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [content, setContent] = useState("");
   const [view, setView] = useState("send");
-  const [user, setUser] = useState({});
   const supabase = createClientComponentClient();
 
   useEffect(() => {
@@ -17,13 +15,12 @@ export default function ContactForm() {
       const { data } = await supabase.auth.getUser();
       if (data && data.user) {
         console.log(data);
-        setUser(data.user);
         if (data.user.email) setEmail(data.user.email);
       }
     };
 
     getUser();
-  }, [supabase, setUser]);
+  }, [supabase, setEmail]);
 
   const handleSendMessage = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
