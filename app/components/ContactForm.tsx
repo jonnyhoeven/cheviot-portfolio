@@ -8,7 +8,6 @@ export default function ContactForm() {
   const [content, setContent] = useState("");
   const [view, setView] = useState("send");
 
-  // Create a Supabase client configured to use cookies
   const supabase = createClientComponentClient();
 
   const handleSendMessage = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -36,7 +35,7 @@ export default function ContactForm() {
           </div>
         </div>
       ) : (
-        <form>
+        <form onSubmit={handleSendMessage}>
           <div className="mb-6 w-96">
             <label
               htmlFor="email"
@@ -74,10 +73,7 @@ export default function ContactForm() {
             ></textarea>
           </div>
 
-          <button
-            onClick={handleSendMessage}
-            className=" text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
-          >
+          <button className=" text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
             Submit
           </button>
         </form>
