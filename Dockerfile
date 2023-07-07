@@ -1,39 +1,48 @@
-# see https://docs.docker.com/engine/reference/builder/#understand-how-arg-and-from-interact
-ARG NODE_VERSION=node:16.14.2
+FROM node:18-alpine AS base
 
-FROM $NODE_VERSION AS dependency-base
-
-# create destination directory
-RUN mkdir -p /app
+# Install dependencies only when needed
+FROM base AS deps
+# Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
+RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
-# copy the app, note .dockerignore
-COPY package.json .
-COPY package-lock.json .
+# Install dependencies based on the preferred package manager
+COPY package.json package-lock.json  ./
 RUN npm ci
 
-FROM dependency-base AS production-base
 
-# build will also take care of building
-# if necessary
+# Rebuild the source code only when needed
+FROM base AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
+
+ENV NEXT_TELEMETRY_DISABLED 1
+
 RUN npm run build
 
-FROM $NODE_VERSION AS production
+# Production image, copy all the files and run next
+FROM base AS runner
+WORKDIR /app
 
-COPY --from=production-base /app/.output /app/.output
+ENV NODE_ENV production
+ENV NEXT_TELEMETRY_DISABLED 1
 
-# Service hostname
-ENV NUXT_HOST=0.0.0.0
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
 
-# Service version
-ARG NUXT_APP_VERSION
-ENV NUXT_APP_VERSION=${NUXT_APP_VERSION}
+COPY --from=builder /app/public ./public
 
-ENV DATABASE_URL=file:./db.sqlite
+# Automatically leverage output traces to reduce image size
+# https://nextjs.org/docs/advanced-features/output-file-tracing
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
-# Run in production mode
-ENV NODE_ENV=production
+USER nextjs
 
-# start the app
-CMD [ "node", "/app/.output/server/index.mjs" ]
+EXPOSE 3000
+
+ENV PORT 3000
+ENV HOST 0.0.0.0
+
+CMD ["node", "server.js"]

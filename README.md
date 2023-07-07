@@ -1,64 +1,49 @@
-# JustMe.dev
+# Justme.dev
+This is my personal portfolio site.
+Looking for the cheapest cold start solution Next.js app.
 
-This is my public website, hosted on [JustMe.dev](https://www.justme.dev/).
+I'm using Github Actions to run code inspection and tests.
+Gooogle Cloud Build to build and deploy the app to Cloud Run.
+The app is hosted on Cloud Run and should use Cloudflare for DNS and CDN.
 
-[![CI](https://github.com/jonnyhoeven/cheviot-portfolio/actions/workflows/ci.yaml/badge.svg)](https://github.com/jonnyhoeven/cheviot-portfolio/actions/workflows/ci.yaml)
+## Todo
+- [ ] describe cloud build setup
+- [ ] describe cloud run setup
 
 
-This is a [sidebase merino](https://sidebase.io/) app created by running `npm create sidebase@latest`. This project uses the following technologies for a great developer- and user-experience:
-- [TypeScript](https://www.typescriptlang.org/)
-- [Nuxt 3](https://nuxt.com)
-- Prisma ORM
-- nuxt-auth
-- tRPC 10
-- Tailwind CSS
-- Naive UI
-- GitHub Actions based CI
+## Next.js
+This uses the standalone build of Next.js. It is not using the Next.js server.
+- includes supabase client on server and client side
 
-## How to get going?
-This is a straight-forward setup with minimal templating and scaffolding:
-- [the First Steps documentation](https://sidebase.io/sidebase/usage)
-- [our discord](https://discord.gg/auc8eCeGzx)
+Before running the app, you must build the app with `npm run build`.
+after the build phase make sure to run `npm run export` to generate the static files and copy these to the standalone server build. The static part should be on a CDN or edge network.
 
-Some tasks you should probably do in the beginning are:
-- [ ] install the Vue Volar extension
-- [ ] enable [Volar takeover mode](https://nuxt.com/docs/getting-started/installation#prerequisites) to ensure a smooth editor setup
-- [ ] [install Nuxt 3 devtools](https://github.com/nuxt/devtools#installation) if you want to use them
-- [ ] Prisma: Edit your `prisma/prisma.schema` to your liking
-- [ ] Prisma: Run `npx prisma db push` to sync the schema to your database & generate the Prisma Client
-- [ ] Auth: Configure your auth providers to the [NuxtAuthHandler](./server/api/auth/[...].ts)
-- [ ] Auth, optional: Enable global protection by setting `enableGlobalAppMiddleware: true` in [your nuxt.config.ts](./nuxt.config.ts). Delete the local middleware in the [protected.vue](./pages/protected.vue) page if you do
+## Supabase
+This uses Supabase as the backend. be sure to update env.local with your Supabase credentials. [Seeds](./seed/seed.sql)  can be found in the seed folder.
 
-### Setup
-
-Make sure to install the dependencies:
-
+## Development
 ```bash
 npm install
-```
-
-### Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
 npm run dev
-
-
-struickstraat 20
-3131mc
 ```
 
-### Production
-
-Build the application for production:
-
+## Production
 ```bash
 npm run build
+npm run export
+npm run start
 ```
 
-Locally preview production build:
+## Github Actions CI
+Code inspection workflow will add static files to the standalone server build before testing.
+Test framework is undetermined at this time.
 
+## Cloud build CD
+Cloud build will recieve a webhook from github and build the app. It will then deploy the app to Cloud Run.
+
+## Docker
+The Dockerfile will import the static files during build for the standalone server.
 ```bash
-npm run preview
+docker build -t nextjs-docker .
+docker run -p 3000:3000 nextjs-docker
 ```

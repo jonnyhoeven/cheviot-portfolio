@@ -1,22 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './components/**/*.{js,vue,ts}',
-    './layouts/**/*.vue',
-    './pages/**/*.vue',
-    './plugins/**/*.{js,ts}',
-    './nuxt.config.{js,ts}',
-    './app.vue'
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: 'class',
   theme: {
     extend: {
-      fontFamily: {
-        inter: ['Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif']
-      }
-    }
+      colors: {
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        btn: {
+          background: "hsl(var(--btn-background))",
+          "background-hover": "hsl(var(--btn-background-hover))",
+        },
+      },
+    },
   },
-  corePlugins: {
-    preflight: true
-  }
-}
+  plugins: [],
+};
