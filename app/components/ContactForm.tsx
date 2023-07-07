@@ -16,15 +16,12 @@ export default function ContactForm() {
         if (data.user.email) setEmail(data.user.email);
       }
     };
-
     getUser();
   }, [supabase, setEmail]);
 
   const handleSendMessage = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     await supabase.from("messages").insert({ email, content });
-
     setView("thank-you");
   };
 
