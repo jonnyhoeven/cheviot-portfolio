@@ -13,7 +13,6 @@ export default function ContactForm() {
     const getUser = async () => {
       const { data } = await supabase.auth.getUser();
       if (data && data.user) {
-        console.log(data);
         if (data.user.email) setEmail(data.user.email);
       }
     };
@@ -40,7 +39,7 @@ export default function ContactForm() {
           <div className="pt-3">Your message was:</div>
           <pre className="pt-2 text-gray-600">{content}</pre>
           <div className="pt-4 text-gray-600 text-xs justify-self-end">
-            {email}
+            <small>from:</small> {email}
           </div>
         </div>
       ) : (
