@@ -38,7 +38,7 @@ jobs:
         run: nr build
 
       - name: Add static files
-        run: nr copy-static
+        run: nr export
 
       - name: Run production check
         run: "(timeout 60 nr start & (sleep 5 && curl --fail localhost:3000)) && echo Run production check successful"
