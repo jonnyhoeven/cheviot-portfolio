@@ -55,8 +55,6 @@ export default function Login() {
         redirectTo: `${location.origin}/auth/callback`,
       },
     });
-
-    console.log("signin,", data, error);
   };
 
   return (
