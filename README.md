@@ -3,7 +3,7 @@ This is my personal portfolio site.
 Looking for the cheapest cold start solution Next.js app.
 
 I'm using Github Actions to run code inspection and tests.
-Gooogle Cloud Build to build and deploy the app to Cloud Run.
+Google Cloud Build to build and deploy the app to Cloud Run.
 The app is hosted on Cloud Run and should use Cloudflare for DNS and CDN.
 
 ## Todo
@@ -47,3 +47,8 @@ The Dockerfile will import the static files during build for the standalone serv
 docker build -t nextjs-docker .
 docker run -p 3000:3000 nextjs-docker
 ```
+
+# todo
+- warn Experimental features are not covered by semver, and may cause unexpected or broken application behavior. Use at your own risk.
+- warn No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
