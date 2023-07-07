@@ -16,7 +16,7 @@ This uses the standalone build of Next.js. It is not using the Next.js server.
 - includes supabase client on server and client side
 
 Before running the app, you must build the app with `npm run build`.
-after the build phase make sure to run `npm run export` to generate the static files and copy these to the standalone server build. The static part should be on a CDN or edge network anyways.
+after the build phase make sure to run `npm run export` to generate the static files and copy these to the standalone server build. The static part should be on a CDN or edge network.
 
 ## Supabase
 This uses Supabase as the backend. be sure to update env.local with your Supabase credentials. [Seeds](./seed/seed.sql)  can be found in the seed folder.
@@ -36,11 +36,10 @@ npm run start
 
 ## Github Actions CI
 Code inspection workflow will add static files to the standalone server build before testing.
-Test framwork is undetermined at this time.
+Test framework is undetermined at this time.
 
 ## Cloud build CD
 Cloud build will recieve a webhook from github and build the app. It will then deploy the app to Cloud Run.
-Main should be protected and only allow PRs to be merged into main. This will trigger the build and deploy workflow.
 
 ## Docker
 The Dockerfile will import the static files during build for the standalone server.
