@@ -5,46 +5,46 @@ export default async function Index() {
 
       <p className="w-1/2 pt-20">
         Privacy Policy Last Modified: 14 April 2023 Thank you for your interest
-        in Supabase, Inc., ("Supabase," "we", "our" or "us"). Supabase provides
-        a suite of open source tools, stitched together to build a seamless
-        developer experience. This Privacy Notice explains how information about
-        you, that directly identifies you, or that makes you identifiable
-        ("personal information") is collected, used and disclosed by Supabase in
-        connection with our website at supabase.com (the "Site") and our
-        services offered in connection with the Site (collectively with the
-        Site, the "Service"). We may also provide you with additional privacy
-        notices or disclosures where the scope of the inquiry, request, or
-        personal information we require falls outside the scope of this Privacy
-        Notice. In that case, the additional Privacy Notice or disclosures will
-        govern how we may process the information you provide at that time.
-        Please note that this Privacy Notice does not cover or apply to our
-        processing of information about our employees or contractors. This
-        Policy explains how we use your personal information when we act as a
-        data controller. As far as you use our Service as a natural person, we
-        are the controller of your personal information. We are responsible for,
-        and control, the processing of your personal information. Wherever our
-        customers use our Service to submit, manage, or otherwise use content
-        relating to our customers’ end users ("Customer Data") during the
-        provision of our Service, we have contractually committed ourselves to
-        only process such information on behalf and under the instruction of the
-        respective customer, who is the data controller. This Privacy Notice
-        does not apply to such processing and we recommend you read the Privacy
-        Notice of the respective customer, if their processing concerns your
-        personal information. Region-specific Disclosures California - Your
-        California Privacy Rights: If you are a California resident, California
-        Civil Code Section 1798.83 permits you to request information regarding
-        the disclosure of personal information to third parties for their direct
-        marketing purposes during the immediately preceding calendar year. Note
-        we do not share your personal information with third parties for their
-        own marketing purposes. Nevada: Chapter 603A of the Nevada Revised
-        Statutes permits a Nevada resident to opt out of future sales of certain
-        covered information that a website operator has collected or will
-        collect about the resident. Note we do not sell your personal
-        information within the meaning of Chapter 603A. However, if you would
-        still like to submit such a request, please contact us at
-        support@supabase.io. European Economic Area, United Kingdom or
+        in Justme.dev, Inc., ("Justme.dev," "we", "our" or "us"). Justme.dev
+        provides a suite of open source tools, stitched together to build a
+        seamless developer experience. This Privacy Notice explains how
+        information about you, that directly identifies you, or that makes you
+        identifiable ("personal information") is collected, used and disclosed
+        by Justme.dev in connection with our website at Justme.dev (the "Site")
+        and our services offered in connection with the Site (collectively with
+        the Site, the "Service"). We may also provide you with additional
+        privacy notices or disclosures where the scope of the inquiry, request,
+        or personal information we require falls outside the scope of this
+        Privacy Notice. In that case, the additional Privacy Notice or
+        disclosures will govern how we may process the information you provide
+        at that time. Please note that this Privacy Notice does not cover or
+        apply to our processing of information about our employees or
+        contractors. This Policy explains how we use your personal information
+        when we act as a data controller. As far as you use our Service as a
+        natural person, we are the controller of your personal information. We
+        are responsible for, and control, the processing of your personal
+        information. Wherever our customers use our Service to submit, manage,
+        or otherwise use content relating to our customers’ end users ("Customer
+        Data") during the provision of our Service, we have contractually
+        committed ourselves to only process such information on behalf and under
+        the instruction of the respective customer, who is the data controller.
+        This Privacy Notice does not apply to such processing and we recommend
+        you read the Privacy Notice of the respective customer, if their
+        processing concerns your personal information. Region-specific
+        Disclosures California - Your California Privacy Rights: If you are a
+        California resident, California Civil Code Section 1798.83 permits you
+        to request information regarding the disclosure of personal information
+        to third parties for their direct marketing purposes during the
+        immediately preceding calendar year. Note we do not share your personal
+        information with third parties for their own marketing purposes. Nevada:
+        Chapter 603A of the Nevada Revised Statutes permits a Nevada resident to
+        opt out of future sales of certain covered information that a website
+        operator has collected or will collect about the resident. Note we do
+        not sell your personal information within the meaning of Chapter 603A.
+        However, if you would still like to submit such a request, please
+        contact us at info@justme.dev. European Economic Area, United Kingdom or
         Switzerland: If you are located in the European Economic Area ("EEA"),
-        United Kingdom or Switzerland, or otherwise engage with Supabase’s
+        United Kingdom or Switzerland, or otherwise engage with Justme.dev's
         European operations, please see the Privacy Disclosures for the European
         Economic Area, United Kingdom and Switzerland for additional
         European-specific privacy disclosures, including what constitutes your
@@ -190,71 +190,72 @@ export default async function Index() {
         parties as required by law or subpoena or if we reasonably believe that
         such action is necessary to (a) comply with the law and the reasonable
         requests of law enforcement; (b) to enforce our Terms of Service or
-        other agreements or to protect the security or integrity of the Supabase
-        services, including to prevent harm or financial loss, or in connection
-        with preventing fraud or illegal activity; and/or (c) to exercise or
-        protect the rights, property, or personal safety of Supabase, our
-        Customers, visitors, or others. We may share with other companies and
-        brands owned or controlled by Supabase, and other companies owned by or
-        under common ownership as Supabase. These companies will use your
-        personal information in the same way as we can under this Privacy
-        Notice. We may transfer any information we collect in the event we sell
-        or transfer all or a portion of our business or assets (including any
-        shares in the company) or any portion or combination of our products,
-        services, businesses and/or assets. Should such a transaction occur
-        (whether a divestiture, merger, acquisition, bankruptcy, dissolution,
-        reorganization, liquidation, or similar transaction or proceeding), we
-        will use reasonable efforts to ensure that any transferred information
-        is treated in a manner consistent with this Privacy Notice. We may
-        disclose your information publicly or with another third party with your
-        prior authorization. With others in an aggregated or otherwise
-        anonymized form that does not reasonably identify you directly as an
-        individual. 3. Control over your information Email Communications From
-        time to time, we may send you emails regarding updates to our Service,
-        products or services, notices about our organization, or information
-        about products/services we offer (or promotional offers from third
-        parties) that we think may be of interest to you. If you wish to
-        unsubscribe from such emails, simply click the "unsubscribe link"
-        provided at the bottom of the email communication. Note that you cannot
-        unsubscribe from certain services-related email communications (e.g.,
-        account verification, confirmations of transactions, technical or legal
-        notices). Modifying Account Information If you have an online account
-        with us, you have the ability to modify certain information in your
-        account (e.g., your contact information) through the account options
-        provided on the Site. If there is personal information in your User
-        Content, you can use the features and functionality of the Service to
-        edit or delete the personal information or User Content. Not all
-        personal information is maintained in a format that you can access or
-        change. If you would like to request access to, or correction or
-        deletion of personal information, you may send your request to us at the
-        email provided below. We will review your request and may require you to
-        provide additional information to identify yourself, but we do not
-        promise that we will be able to satisfy your request. 4. How We Use
-        Cookies and Other Tracking Technology to Collect Information We, and our
-        third-party partners, automatically collect certain types of usage
-        information when you visit our Site, read our emails, or otherwise
-        engage with us. We typically collect this information through a variety
-        of tracking technologies, including cookies, web beacons, embedded
-        scripts, location-identifying technologies, file information, and
-        similar technology (collectively, "tracking technologies"). We, and our
-        third-party partners, use tracking technologies to automatically collect
-        usage and device information, such as: Information about your device and
-        its software, such as your IP address, browser type, Internet service
-        provider, device type/model/manufacturer, operating system, date and
-        time stamp, and a unique ID that allows us to uniquely identify your
-        browser or your account (including, for example, a persistent device
-        identifier), and other such information. When you access our sites from
-        a mobile device, we may collect unique identification numbers associated
-        with your device or our mobile application mobile carrier, device type,
-        model and manufacturer, mobile device operating system brand and model,
-        and depending on your mobile device settings, we may be able to
-        approximate a device’s location by analyzing other information, like an
-        IP address. Information about the way you access and use our services,
-        for example, the site from which you came and the site to which you are
-        going when you leave our services, the pages you visit, the links you
-        click, whether you open emails or click the links contained in emails,
-        whether you access the services from multiple devices, and other actions
-        you take on the Sites. We use the data collected through tracking
+        other agreements or to protect the security or integrity of the
+        Justme.dev services, including to prevent harm or financial loss, or in
+        connection with preventing fraud or illegal activity; and/or (c) to
+        exercise or protect the rights, property, or personal safety of
+        Justme.dev, our Customers, visitors, or others. We may share with other
+        companies and brands owned or controlled by Justme.dev, and other
+        companies owned by or under common ownership as Justme.dev. These
+        companies will use your personal information in the same way as we can
+        under this Privacy Notice. We may transfer any information we collect in
+        the event we sell or transfer all or a portion of our business or assets
+        (including any shares in the company) or any portion or combination of
+        our products, services, businesses and/or assets. Should such a
+        transaction occur (whether a divestiture, merger, acquisition,
+        bankruptcy, dissolution, reorganization, liquidation, or similar
+        transaction or proceeding), we will use reasonable efforts to ensure
+        that any transferred information is treated in a manner consistent with
+        this Privacy Notice. We may disclose your information publicly or with
+        another third party with your prior authorization. With others in an
+        aggregated or otherwise anonymized form that does not reasonably
+        identify you directly as an individual. 3. Control over your information
+        Email Communications From time to time, we may send you emails regarding
+        updates to our Service, products or services, notices about our
+        organization, or information about products/services we offer (or
+        promotional offers from third parties) that we think may be of interest
+        to you. If you wish to unsubscribe from such emails, simply click the
+        "unsubscribe link" provided at the bottom of the email communication.
+        Note that you cannot unsubscribe from certain services-related email
+        communications (e.g., account verification, confirmations of
+        transactions, technical or legal notices). Modifying Account Information
+        If you have an online account with us, you have the ability to modify
+        certain information in your account (e.g., your contact information)
+        through the account options provided on the Site. If there is personal
+        information in your User Content, you can use the features and
+        functionality of the Service to edit or delete the personal information
+        or User Content. Not all personal information is maintained in a format
+        that you can access or change. If you would like to request access to,
+        or correction or deletion of personal information, you may send your
+        request to us at the email provided below. We will review your request
+        and may require you to provide additional information to identify
+        yourself, but we do not promise that we will be able to satisfy your
+        request. 4. How We Use Cookies and Other Tracking Technology to Collect
+        Information We, and our third-party partners, automatically collect
+        certain types of usage information when you visit our Site, read our
+        emails, or otherwise engage with us. We typically collect this
+        information through a variety of tracking technologies, including
+        cookies, web beacons, embedded scripts, location-identifying
+        technologies, file information, and similar technology (collectively,
+        "tracking technologies"). We, and our third-party partners, use tracking
+        technologies to automatically collect usage and device information, such
+        as: Information about your device and its software, such as your IP
+        address, browser type, Internet service provider, device
+        type/model/manufacturer, operating system, date and time stamp, and a
+        unique ID that allows us to uniquely identify your browser or your
+        account (including, for example, a persistent device identifier), and
+        other such information. When you access our sites from a mobile device,
+        we may collect unique identification numbers associated with your device
+        or our mobile application mobile carrier, device type, model and
+        manufacturer, mobile device operating system brand and model, and
+        depending on your mobile device settings, we may be able to approximate
+        a device’s location by analyzing other information, like an IP address.
+        Information about the way you access and use our services, for example,
+        the site from which you came and the site to which you are going when
+        you leave our services, the pages you visit, the links you click,
+        whether you open emails or click the links contained in emails, whether
+        you access the services from multiple devices, and other actions you
+        take on the Sites. We use the data collected through tracking
         technologies to: (a) remember information so that you will not have to
         re-enter it during your visit or the next time you visit the site; (b)
         provide custom content and information; (c) identify you across multiple
@@ -281,18 +282,18 @@ export default async function Index() {
         your personal information for the length of time needed to fulfill the
         purposes outlined in this Privacy Notice, unless a longer retention
         period is required or permitted by law. We store data on servers in the
-        U.S. or any other country in which Supabase or its affiliates,
+        U.S. or any other country in which Justme.dev or its affiliates,
         subsidiaries, agents or contractors maintain facilities. If you are
         located in the European Union or other regions with laws governing data
         collection and use that may differ from U.S. law, please note that your
         personal information may be transferred to a country and jurisdiction
         that does not have the same data protection laws as your jurisdiction.
-        When you register for use with Supabase you have the option of where you
-        store your information and we will not transfer it without providing
-        information to you in advance. Supabase cares about the security of your
-        information and uses commercially reasonable physical, technical and
-        organizational measures designed to preserve the integrity and security
-        of all information we collect. However, no security system is
+        When you register for use with Justme.dev you have the option of where
+        you store your information and we will not transfer it without providing
+        information to you in advance. Justme.dev cares about the security of
+        your information and uses commercially reasonable physical, technical
+        and organizational measures designed to preserve the integrity and
+        security of all information we collect. However, no security system is
         impenetrable, and we cannot guarantee the security of our systems 100%.
         In the event that any information under our control is compromised as a
         result of a breach of security, we will take reasonable steps to
@@ -315,79 +316,80 @@ export default async function Index() {
         collected inadvertently from a child under 13, we will delete the
         information as soon as possible. If you believe that we might have
         collected information from a child under 13, please contact us at
-        privacy@supabase.io. 8. Changes to Privacy Notice We reserve the right
+        privacy@Justme.dev.io. 8. Changes to Privacy Notice We reserve the right
         to change this Privacy Notice from time to time in our sole discretion.
         We will notify you about material changes in the way we treat personal
         data by sending a notice to the primary email address specified in your
-        Supabase account and/or by placing a prominent notice on our Site. It is
-        your responsibility to review this Privacy Notice periodically. When we
-        do change the Privacy Notice, we will also revise the "last modified"
+        Justme.dev account and/or by placing a prominent notice on our Site. It
+        is your responsibility to review this Privacy Notice periodically. When
+        we do change the Privacy Notice, we will also revise the "last modified"
         date. 9. Contact Us For additional inquiries about this Privacy Notice,
-        please send us an email at privacy@supabase.io. This Privacy Notice was
-        last modified on 27th March 2021 Privacy disclosures for the European
-        economic area, United Kingdom, and Switzerland. While we are primarily
-        based in the United States, Supabase maintains operations in Europe and
-        may direct our services to individuals located in the European Economic
-        Area ("EEA"), United Kingdom and Switzerland, including through our Site
-        supabase.com (collectively, our "European Services"). The following
-        disclosures ("Privacy Disclosures") apply to our processing of personal
-        data in connection with our European Services. Supabase, Inc. is the
-        data controller responsible for the processing of personal data in
-        connection with our European Services. This means that we determine and
-        are responsible for how your personal information is used. Personal
-        Data: When we use the term "personal data" in this section, we mean
-        information relating to an identified or identifiable natural person. 1.
-        Personal data we collect from you when you use the Supabase European
-        Services, and how we use it. We collect the categories of personal data
-        that you voluntarily submit directly to us when you use the European
-        Services, as set forth in our Privacy Notice under the section entitled
-        Information We Collect and Our Use. The table at Annex 1 sets out in
-        detail the categories of personal data we collect about you and how we
-        use that information when you use the European Services, as well as the
+        please send us an email at privacy@Justme.dev.io. This Privacy Notice
+        was last modified on 27th March 2021 Privacy disclosures for the
+        European economic area, United Kingdom, and Switzerland. While we are
+        primarily based in the United States, Justme.dev maintains operations in
+        Europe and may direct our services to individuals located in the
+        European Economic Area ("EEA"), United Kingdom and Switzerland,
+        including through our Site Justme.dev (collectively, our "European
+        Services"). The following disclosures ("Privacy Disclosures") apply to
+        our processing of personal data in connection with our European
+        Services. Justme.dev, Inc. is the data controller responsible for the
+        processing of personal data in connection with our European Services.
+        This means that we determine and are responsible for how your personal
+        information is used. Personal Data: When we use the term "personal data"
+        in this section, we mean information relating to an identified or
+        identifiable natural person. 1. Personal data we collect from you when
+        you use the Justme.dev European Services, and how we use it. We collect
+        the categories of personal data that you voluntarily submit directly to
+        us when you use the European Services, as set forth in our Privacy
+        Notice under the section entitled Information We Collect and Our Use.
+        The table at Annex 1 sets out in detail the categories of personal data
+        we collect about you and how we use that information when you use the
+        European Services, as well as the legal basis which we rely on to
+        process the personal information and recipients of that personal
+        information. 2. Information we collect about you automatically. We also
+        automatically collect personal information indirectly about how you
+        access and use the European Services, and information about the device
+        you use to access the European Services. For example, we may collect:
+        (a) information about the features you use and the pages you view on the
+        European Services; (b) information about your device (such as your IP
+        address, device identifier, device type, model and manufacturer); and
+        (c) information about your usage patterns (such as how often you use the
+        Justme.dev European Services and your language settings). We use this
+        information to provide you the features and functionality of the
+        European Services, to monitor and improve the European Services and to
+        develop new services. The table at Annex 2 sets out further information
+        about the categories of personal information we collect about you
+        automatically and how we use that information. The table also lists the
         legal basis which we rely on to process the personal information and
-        recipients of that personal information. 2. Information we collect about
-        you automatically. We also automatically collect personal information
-        indirectly about how you access and use the European Services, and
-        information about the device you use to access the European Services.
-        For example, we may collect: (a) information about the features you use
-        and the pages you view on the European Services; (b) information about
-        your device (such as your IP address, device identifier, device type,
-        model and manufacturer); and (c) information about your usage patterns
-        (such as how often you use the Supabase European Services and your
-        language settings). We use this information to provide you the features
-        and functionality of the European Services, to monitor and improve the
-        European Services and to develop new services. The table at Annex 2 sets
-        out further information about the categories of personal information we
-        collect about you automatically and how we use that information. The
-        table also lists the legal basis which we rely on to process the
-        personal information and recipients of that personal information. We may
-        link or combine the personal information we collect about you and the
-        information we collect automatically. We may anonymise and aggregate any
-        of the personal information we collect (so that it does not directly
-        identify you). We may use anonymised information for purposes that
-        include testing our IT systems, research, data analysis, improving the
-        Supabase European Services. We may also share such anonymised and
-        aggregated information with others. 3. How long will we store your
-        personal information We will usually store the personal information we
-        collect about you for no longer than necessary for the purposes set out
-        in Annex 1 and Annex 2, in accordance with our legal obligations and
-        legitimate business interests. The criteria used to determine the period
-        for which personal information about you will be retained varies
-        depending on the legal basis under which we process the personal
-        information: Legitimate Interests. Where we are processing personal
-        information based on our legitimate interests, we generally will retain
-        such information for a reasonable period of time based on the particular
-        interest, taking into account the fundamental interests and the rights
-        and freedoms of data subjects. Consent. Where we are processing personal
-        information based on your consent, we generally will retain the
-        information until you withdraw your consent, or otherwise for the period
-        of time necessary to fulfill the underlying agreement with you or
-        provide you with the applicable service for which we process that
-        personal information. Contract. Where we are processing personal
-        information based on contract, we generally will retain the information
-        for the duration of the contract plus some additional limited period of
-        time that is necessary to comply with law or that represents the statute
-        of limitations for legal claims that could arise from the contractual
+        recipients of that personal information. We may link or combine the
+        personal information we collect about you and the information we collect
+        automatically. We may anonymise and aggregate any of the personal
+        information we collect (so that it does not directly identify you). We
+        may use anonymised information for purposes that include testing our IT
+        systems, research, data analysis, improving the Justme.dev European
+        Services. We may also share such anonymised and aggregated information
+        with others. 3. How long will we store your personal information We will
+        usually store the personal information we collect about you for no
+        longer than necessary for the purposes set out in Annex 1 and Annex 2,
+        in accordance with our legal obligations and legitimate business
+        interests. The criteria used to determine the period for which personal
+        information about you will be retained varies depending on the legal
+        basis under which we process the personal information: Legitimate
+        Interests. Where we are processing personal information based on our
+        legitimate interests, we generally will retain such information for a
+        reasonable period of time based on the particular interest, taking into
+        account the fundamental interests and the rights and freedoms of data
+        subjects. Consent. Where we are processing personal information based on
+        your consent, we generally will retain the information until you
+        withdraw your consent, or otherwise for the period of time necessary to
+        fulfill the underlying agreement with you or provide you with the
+        applicable service for which we process that personal information.
+        Contract. Where we are processing personal information based on
+        contract, we generally will retain the information for the duration of
+        the contract plus some additional limited period of time that is
+        necessary to comply with law or that represents the statute of
+        limitations for legal claims that could arise from the contractual
         relationship. Legal Obligation. Where we are processing personal
         information based on a legal obligation, we generally will retain the
         information for the period of time necessary to fulfill the legal
@@ -408,7 +410,7 @@ export default async function Index() {
         professional services, such as legal and accounting services, mailing,
         email or chat services, fraud prevention, web hosting, or providing
         analytic services. Affiliates. Other companies owned by or under common
-        ownership as Supabase, including our subsidiaries (i.e., any
+        ownership as Justme.dev, including our subsidiaries (i.e., any
         organization we own or control) and our ultimate holding company (i.e.,
         any organization that owns or controls us) and any subsidiaries it owns.
         These companies will use your personal information in the same way as we
@@ -423,7 +425,7 @@ export default async function Index() {
         with the law and the reasonable requests of law enforcement; (ii) detect
         and investigate illegal activities and breaches of agreements, including
         our Terms; and/or (iii) exercise or protect the rights, property, or
-        personal safety of Supabase, its users or others. 5. Marketing and
+        personal safety of Justme.dev, its users or others. 5. Marketing and
         Advertising From time to time we may contact you with information about
         our services, including sending you marketing messages and asking for
         your feedback on our services. Most marketing messages we send will be
@@ -643,7 +645,7 @@ export default async function Index() {
         location. Your device’s IP address may however help us determine an
         approximate location. We may use information you provide to us about
         your location to monitor and detect fraud or suspicious activity in
-        relation to your Supabase account. The processing is necessary for our
+        relation to your Justme.dev account. The processing is necessary for our
         legitimate interests, namely to protect our business and your account
         from fraud and other illegal activities. Approximate location
         information: We may share this information with the following service
@@ -680,25 +682,26 @@ export default async function Index() {
         Enhanced Mode allows you to embed YouTube videos without using cookies
         that track viewing behavior. This means no activity is collected to
         personalize the viewing experience. Annex 4 - Information you submit
-        through our Supabase AI tool When you submit a support query through our
-        chatbot tool, we will collect the content of your query and information
-        about the databases and other content you manage through the Service. We
-        will only collect information about the structure of your databases and
-        content, such as column and row headings or other information about how
-        that content is organized. We will not access the content of the
-        databases itself or the information you manage through the Service. How
-        we use the Personal Information Legal Bases for Processing Recipients of
-        Personal Information When you use the chatbot to submit queries through
-        your own individual account, we will use this information to generate
-        automated responses to your query. The processing is necessary for the
-        performance of a contract with you, namely our Terms of Service. We may
-        share this information with the following service providers through the
-        provision of the Service: OpenAI, LLC and its affiliates. We use this
-        information to assess the performance of the chatbot tool and improve
-        the Service. The processing is necessary for our legitimate interests
-        (to develop and improve our service). We may share this information with
-        the following service providers through the provision of the Service:
-        OpenAI, LLC and its affiliates.
+        through our Justme.dev AI tool When you submit a support query through
+        our chatbot tool, we will collect the content of your query and
+        information about the databases and other content you manage through the
+        Service. We will only collect information about the structure of your
+        databases and content, such as column and row headings or other
+        information about how that content is organized. We will not access the
+        content of the databases itself or the information you manage through
+        the Service. How we use the Personal Information Legal Bases for
+        Processing Recipients of Personal Information When you use the chatbot
+        to submit queries through your own individual account, we will use this
+        information to generate automated responses to your query. The
+        processing is necessary for the performance of a contract with you,
+        namely our Terms of Service. We may share this information with the
+        following service providers through the provision of the Service:
+        OpenAI, LLC and its affiliates. We use this information to assess the
+        performance of the chatbot tool and improve the Service. The processing
+        is necessary for our legitimate interests (to develop and improve our
+        service). We may share this information with the following service
+        providers through the provision of the Service: OpenAI, LLC and its
+        affiliates.
       </p>
     </div>
   );
