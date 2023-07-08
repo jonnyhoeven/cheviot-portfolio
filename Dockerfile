@@ -19,6 +19,9 @@ COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED 1
 
+ENV NEXT_PUBLIC_SUPABASE_URL https://opsopxcuijvxynewriib.supabase.co
+ENV NEXT_PUBLIC_SUPABASE_ANON_KEY eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9wc29weGN1aWp2eHluZXdyaWliIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODg2MzgzOTIsImV4cCI6MjAwNDIxNDM5Mn0.V-zihZEKuDS_FPHIvXnR8ltvlK5blZJ4bscVYPAyJGk
+
 RUN npm run build
 
 # Production image, copy all the files and run next
