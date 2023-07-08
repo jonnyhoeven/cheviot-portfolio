@@ -19,7 +19,7 @@ Before running the app, you must build the app with `npm run build`.
 after the build phase make sure to run `npm run export` to generate the static files and copy these to the standalone server build. The static part should be on a CDN or edge network.
 
 ## Supabase
-This uses Supabase as the backend. be sure to update env.local with your Supabase credentials. [Seeds](./seed/seed.sql)  can be found in the seed folder.
+This uses Supabase as the backend. be sure to update env.local with your Supabase credentials. [Seeds](./seed/seed.sql) can be found in the seed folder.
 
 ## Development
 ```bash
