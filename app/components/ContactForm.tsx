@@ -31,7 +31,7 @@ export default function ContactForm() {
         <div>
           <div className="text-xl">Thank you for reaching out!</div>
           <div className="pt-3 w-96">
-            Your message has been recieved, I will reply as soon as possible.
+            Your message is stored, I will reply as soon as possible.
           </div>
           <div className="pt-3">Your message was:</div>
           <pre className="pt-2 text-gray-600">{content}</pre>
