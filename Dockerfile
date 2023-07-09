@@ -20,6 +20,7 @@ COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED 1
 ENV NEXT_PUBLIC_SERVER $SERVER
+ENV NEXT_SHARP_PATH /app/node_modules/sharp
 
 RUN echo "building for: $NEXT_PUBLIC_SERVER" 
 RUN npm run build
