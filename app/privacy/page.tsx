@@ -44,34 +44,33 @@ export default async function Index() {
         However, if you would still like to submit such a request, please
         contact us at info@justme.dev. European Economic Area, United Kingdom or
         Switzerland: If you are located in the European Economic Area ("EEA"),
-        United Kingdom or Switzerland, or otherwise engage with Justme.dev's
-        European operations, please see the Privacy Disclosures for the European
-        Economic Area, United Kingdom and Switzerland for additional
-        European-specific privacy disclosures, including what constitutes your
-        personal information, the lawful bases we rely on to process your
-        personal information, how we use cookies when you access our Sites from
-        the EEA, UK or Switzerland and your rights in respect of your personal
-        information. Note for International Visitors: Personal information may
-        be transferred to, stored and processed in a country other than the one
-        in which it was collected. For example, the Sites are primarily hosted
-        in and provided from the United States. Please note the country to which
-        personal data is transferred may not provide the same level of
-        protection for personal information as the country from which it was
-        transferred. 1. Information we collect and our use We collect personal
-        information in connection with your visits to and use of the Service.
-        This collection includes information that you provide in connection with
-        the Service, information from third parties, and information that is
-        collected automatically such as through the use of cookies and other
-        technologies. Information That You Provide We collect personal
-        information from you. The categories of information we collect can
-        include: Registration information. We collect personal and/or business
-        information that you provide when you register for an account at the
-        Site. This information may include your name, email address, GitHub
-        username. We use this information to administer your account, provide
-        you with the relevant services and information, communicate with you
-        regarding your account, the Site and for customer support purposes.
-        Information collected through the Use of the Service. After
-        registration, you may create, upload or transmit files, documents,
+        the Netherlands, or otherwise engage with Justme.dev's European
+        operations, please see the Privacy Disclosures for the European Economic
+        Area, the Netherlands for additional European-specific privacy
+        disclosures, including what constitutes your personal information, the
+        lawful bases we rely on to process your personal information, how we use
+        cookies when you access our Sites from the EEA, UK or Switzerland and
+        your rights in respect of your personal information. Note for
+        International Visitors: Personal information may be transferred to,
+        stored and processed in a country other than the one in which it was
+        collected. For example, the Sites are primarily hosted in and provided
+        from the United States. Please note the country to which personal data
+        is transferred may not provide the same level of protection for personal
+        information as the country from which it was transferred. 1. Information
+        we collect and our use We collect personal information in connection
+        with your visits to and use of the Service. This collection includes
+        information that you provide in connection with the Service, information
+        from third parties, and information that is collected automatically such
+        as through the use of cookies and other technologies. Information That
+        You Provide We collect personal information from you. The categories of
+        information we collect can include: Registration information. We collect
+        personal and/or business information that you provide when you register
+        for an account at the Site. This information may include your name,
+        email address, GitHub username. We use this information to administer
+        your account, provide you with the relevant services and information,
+        communicate with you regarding your account, the Site and for customer
+        support purposes. Information collected through the Use of the Service.
+        After registration, you may create, upload or transmit files, documents,
         videos, images, data or information as part of your use of the Service
         (collectively, "User Content"). User Content and any information
         contained in the User Content, including personal information you may
