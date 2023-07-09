@@ -2,15 +2,14 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
-import Link from 'next/link'
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 
 export default function Login() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [view, setView] = useState('sign-in')
-  const router = useRouter()
-  const supabase = createClientComponentClient()
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [view, setView] = useState("sign-in");
+  const router = useRouter();
+  const supabase = createClientComponentClient();
 
   const handleSignUp = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -19,7 +18,7 @@ export default function Login() {
       email,
       password,
       options: {
-        emailRedirectTo: `https://www.justme.dev/auth/callback`,
+        emailRedirectTo: `${location.origin}/auth/callback`,
       },
     });
     setView("check-email");
@@ -43,7 +42,7 @@ export default function Login() {
           access_type: "offline",
           prompt: "consent",
         },
-        redirectTo: `https://www.justme.dev/auth/callback`,
+        redirectTo: `${location.origin}/auth/callback`,
       },
     });
   };
@@ -52,7 +51,7 @@ export default function Login() {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "github",
       options: {
-        redirectTo: `https://www.justme.dev/auth/callback`,
+        redirectTo: `${location.origin}/auth/callback`,
       },
     });
   };
