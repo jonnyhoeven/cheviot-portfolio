@@ -114,7 +114,6 @@ export default function Login() {
                 >
                   Sign Up Now
                 </button>
-                test : {process.env.NEXT_PUBLIC_SERVER}
               </p>
             </>
           )}
