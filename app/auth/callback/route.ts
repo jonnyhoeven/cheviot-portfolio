@@ -15,6 +15,6 @@ export async function GET(request: Request) {
   }
 
   // URL to redirect to after sign in process completes
-
+console.log("redirect", process.env.NEXT_PUBLIC_SERVER + "/profile");
   return NextResponse.redirect(process.env.NEXT_PUBLIC_SERVER + "/profile");
 }

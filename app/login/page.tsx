@@ -35,6 +35,9 @@ export default function Login() {
   };
 
   const handleGoogleSignIn = async () => {
+    console.log("RGOOGLE", {
+      redirectTo: `${process.env.NEXT_PUBLIC_SERVER}/auth/callback`,
+    });
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
@@ -48,6 +51,9 @@ export default function Login() {
   };
 
   const handleGitHubSignIn = async () => {
+    console.log("RGITHUB", {
+      redirectTo: `${process.env.NEXT_PUBLIC_SERVER}/auth/callback`,
+    });
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "github",
       options: {
