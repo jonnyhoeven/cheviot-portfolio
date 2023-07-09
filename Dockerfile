@@ -32,17 +32,8 @@ RUN npm run build
 FROM base AS runner
 WORKDIR /app
 
-ENV NODE_ENV production
-ENV NEXT_TELEMETRY_DISABLED 1
-ENV PORT 3000
-ENV HOST 0.0.0.0
-ENV NEXT_PUBLIC_SERVER $SERVER
-ENV NEXT_PUBLIC_SUPABASE_URL $SUPABASE_URL
-ENV NEXT_PUBLIC_SUPABASE_ANON_KEY $ANON_KEY
-
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
-
 COPY --from=builder /app/public ./public
 
 # Automatically leverage output traces to reduce image size
@@ -50,7 +41,16 @@ COPY --from=builder /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 USER nextjs
+
+ENV NODE_ENV production
+ENV NEXT_TELEMETRY_DISABLED 1
+ENV PORT 3000
+ENV HOST 0.0.0.0
+ENV NEXT_PUBLIC_SERVER $SERVER
+ENV NEXT_PUBLIC_SUPABASE_URL $SUPABASE_URL
+ENV NEXT_PUBLIC_SUPABASE_ANON_KEY $ANON_KEY
+RUN echo "Server {$NEXT_PUBLIC_SERVER} supabase env {$NEXT_PUBLIC_SUPABASE_URL}"
+
 EXPOSE 3000
 
-RUN echo "Server {$SERVER} supabase env {$NEXT_PUBLIC_SUPABASE_URL}"
 CMD ["node", "server.js"]
