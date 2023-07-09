@@ -18,7 +18,7 @@ export default function Login() {
       email,
       password,
       options: {
-        emailRedirectTo: `${location.origin}/auth/callback`,
+        emailRedirectTo: `${process.env.NEXT_PUBLIC_SERVER}/auth/callback`,
       },
     });
     setView("check-email");
@@ -42,7 +42,7 @@ export default function Login() {
           access_type: "offline",
           prompt: "consent",
         },
-        redirectTo: `${location.origin}/auth/callback`,
+        redirectTo: `${process.env.NEXT_PUBLIC_SERVER}/auth/callback`,
       },
     });
   };
@@ -51,7 +51,7 @@ export default function Login() {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "github",
       options: {
-        redirectTo: `${location.origin}/auth/callback`,
+        redirectTo: `${process.env.NEXT_PUBLIC_SERVER}/auth/callback`,
       },
     });
   };
@@ -114,6 +114,7 @@ export default function Login() {
                 >
                   Sign Up Now
                 </button>
+                test : {process.env.NEXT_PUBLIC_SERVER}
               </p>
             </>
           )}

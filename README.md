@@ -45,7 +45,7 @@ Cloud build will recieve a webhook from github and build the app. It will then d
 ## Docker
 The Dockerfile will import the static files during build for the standalone server.
 ```bash
-docker build -t nextjs-docker .
+docker build --build-arg NEXT_PUBLIC_SERVER=http://localhost:3000 -t nextjs-docker .
 docker run -p 3000:3000 nextjs-docker
 ```
 
