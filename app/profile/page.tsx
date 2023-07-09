@@ -32,7 +32,7 @@ export default async function Index() {
       {id ? (
         <div className="w-full flex justify-center items-center h-screen dark:text-white gap-5">
           <div className="flex-3 gap-10">
-            <div className="text-3xl pb-3">Hi!</div>
+            <div className="text-3xl pb-3">Welcome!</div>
             <div>{avaUrl && avaImage({ avaUrl, fullName })}</div>
             <div className="pt-3">{fullName}</div>
           </div>
@@ -45,7 +45,7 @@ export default async function Index() {
         </div>
       ) : (
         <div className="w-full flex justify-center items-center h-screen dark:text-white gap-5">
-          <div className="text-3xl">Welcome!</div>
+          <div className="text-3xl">Hi!</div>
           <div>You are currently logged out.</div>
           <Link
             href="/login"
