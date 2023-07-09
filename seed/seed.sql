@@ -41,8 +41,8 @@ create policy "Everyone can read public posts" on posts
 
 insert into posts (title, slug, subtitle, intro,  content, is_public, category) 
 values
-('test', 'test', 'content', 'intro', 'content', true, 'timeline'),
-('test2', 'test2', 'content2','intro', 'content',  true, 'timeline'),
+('test', 'test', 'content', 'intro', 'content', true, 'blog'),
+('test2', 'test2', 'content2','intro', 'content',  true, 'blog'),
 ('testb', 'testb', 'contentb', 'intro', 'content', true, 'blog'),
 ('testb2', 'testb2', 'contentb2','intro', 'content',  true, 'blog')
 ;
