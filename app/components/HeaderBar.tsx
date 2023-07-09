@@ -30,6 +30,9 @@ export default async function HeaderBar() {
           🍒
         </Link>
         <div>
+          <Link href="/blog">Blog</Link>
+        </div>
+        <div>
           <Link href="/contact">Contact</Link>
         </div>
         <div>
