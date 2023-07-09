@@ -47,7 +47,7 @@ The Dockerfile will import the static files during build for the standalone serv
 `SERVER` arg is needed during build so public env can be baked into standalone server.
 
 ```bash
-docker build --build-arg SERVER=http://localhost:3000 -t nextjs-docker .
+docker build --build-arg SERVER=http://localhost:3000 --build-arg HOSTNAME=localhost:3000 -t nextjs-docker .
 docker run -p 3000:3000 nextjs-docker
 ```
 
