@@ -14,15 +14,20 @@ RUN npm ci
 # Rebuild the source code only when needed
 FROM base AS builder
 ARG SERVER=https://www.justme.dev
+ARG SUPABASE_URL=https://opsopxcuijvxynewriib.supabase.co
+ARG ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9wc29weGN1aWp2eHluZXdyaWliIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODg2MzgzOTIsImV4cCI6MjAwNDIxNDM5Mn0.V-zihZEKuDS_FPHIvXnR8ltvlK5blZJ4bscVYPAyJGk
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED 1
 ENV NEXT_PUBLIC_SERVER $SERVER
+ENV NEXT_PUBLIC_SUPABASE_URL $SUPABASE_URL
+ENV NEXT_PUBLIC_SUPABASE_ANON_KEY $ANON_KEY
+
 ENV NEXT_SHARP_PATH /app/node_modules/sharp
 
-RUN echo "building for: $NEXT_PUBLIC_SERVER" 
+RUN echo "building for: {$NEXT_PUBLIC_SERVER} using {$NEXT_PUBLIC_SUPABASE_URL}." 
 RUN npm run build
 
 # Production image, copy all the files and run next
