@@ -1,6 +1,6 @@
 export default async function Index() {
   return (
-    <div className="w-full flex flex-col items-center">
+    <div className="w-full flex flex-col items-center dark:text-white">
       <div className="pt-20 text-2xl">Terms of Service</div>
 
       <p className="w-1/2 pt-20">
