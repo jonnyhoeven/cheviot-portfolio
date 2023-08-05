@@ -1,11 +1,16 @@
 "use server";
 import Link from "next/link";
 import LogoutButton from "./LogoutButton";
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
+import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 
 export default async function HeaderBar() {
   const supabase = createServerComponentClient({ cookies });
+  const { data: menuitems } = await supabase
+    .from("menuitems")
+    .select("id, link_text, link_url")
+    .order("sort_index")
+    .eq("category", "header");
 
   const {
     data: { user },
@@ -27,14 +32,13 @@ export default async function HeaderBar() {
     <nav className="bg-gray-100  dark:bg-gray-600 w-full flex justify-center border-b border-b-foreground/10 h-16">
       <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm text-foreground">
         <Link href="/" className="wiggle-in text-4xl">
-          🍒
+          🔥
         </Link>
-        <div>
-          <Link href="/blog">Blog</Link>
-        </div>
-        <div>
-          <Link href="/contact">Contact</Link>
-        </div>
+        {menuitems?.map((menuitem) => (
+          <div key={menuitem.id}>
+            <Link href={menuitem.link_url}>{menuitem.link_text}</Link>
+          </div>
+        ))}
         <div>
           {user ? (
             <div className="flex items-center gap-4">
