@@ -1,6 +1,6 @@
 {
   "private": true,
-  "engines": { 
+  "engines": {
     "node": "v18.16.1"
   },
   "scripts": {
