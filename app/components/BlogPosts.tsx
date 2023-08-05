@@ -18,7 +18,9 @@ export default async function BlogPosts() {
 
   return (
     <ol className="relative border-l border-gray-200 dark:border-gray-700 mx-10 my-10">
-      {posts && posts.map((post) => <BlogPost post={post} />)}
+      {posts?.map((post) => (
+        <BlogPost post={post} />
+      ))}
     </ol>
   );
 }
