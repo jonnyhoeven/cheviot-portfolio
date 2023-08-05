@@ -12,9 +12,9 @@
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --background: 200 50% 3%;
-      --btn-background: 200 10% 9%;
-      --btn-background-hover: 200 10% 12%;
+      --background: 200 50% 10%;
+      --btn-background: 200 20% 15%;
+      --btn-background-hover: 200 20% 20%;
       --foreground: 200 20% 96%;
     }
   }
@@ -27,7 +27,7 @@
 }
 
 .animate-in {
-  animation: animateIn 0.4s ease 0.15s both;
+  animation: animateIn 0.8s ease 0.15s both;
 }
 
 @keyframes animateIn {
@@ -70,7 +70,7 @@
 }
 
 .float {
-animation: float 6s ease-out infinite;
+animation: float 5.5s ease-out infinite;
 }
 
 @keyframes float {
