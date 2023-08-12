@@ -1,16 +1,9 @@
 # Justme.dev
 
 This is my personal cheviot 🐑 portfolio site.
-Looking for the cheapest cold start solution Next.js app.
 
 I'm using Github Actions to run code/container inspection and tests.
 Google Cloud Build to build and deploy the app to Cloud Run.
-
-
-## Todo
-- [ ] describe cloud build setup
-- [ ] describe cloud run setup
-- [ ] Implement proper cdn/edge network for static files
 
 ## Next.js
 This uses the standalone build of Next.js. It is not using the Next.js server.
