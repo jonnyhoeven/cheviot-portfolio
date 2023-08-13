@@ -40,11 +40,17 @@ The Dockerfile will import the static files during build for the standalone serv
 `SERVER` arg is needed during build so public env can be baked into standalone server.
 
 ```bash
-docker build --build-arg SERVER=http://localhost:3000 --build-arg HOSTNAME=localhost:3000 -t nextjs-docker .
+source .env.local
+docker build \
+--no-cache \
+--build-arg _NEXT_PUBLIC_SERVER=$NEXT_PUBLIC_SERVER  \
+--build-arg _NEXT_PUBLIC_SUPABASE_URL=$NEXT_PUBLIC_SUPABASE_URL \
+--build-arg _NEXT_PUBLIC_SUPABASE_ANON_KEY=$NEXT_PUBLIC_SUPABASE_ANON_KEY \
+--progress plain \
+-t nextjs-docker .
+```
+
+```bash
 docker run -p 3000:3000 nextjs-docker
 ```
 
-# todo
-- warn Experimental features are not covered by semver, and may cause unexpected or broken application behavior. Use at your own risk.
-- warn No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
-Attention: Next.js now collects completely anonymous telemetry regarding usage.
