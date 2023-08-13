@@ -5,8 +5,7 @@ const nextConfig = {
   },
   output: "standalone",
   env: {
-    NEXT_PUBLIC_SERVER:
-      process.env.NEXT_PUBLIC_SERVER || "https://www.justme.dev",
+    NEXT_PUBLIC_SERVER: process.env.NEXT_PUBLIC_SERVER,
   },
 };
 

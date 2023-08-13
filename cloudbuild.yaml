@@ -9,6 +9,9 @@ steps:
       - .
       - '-f'
       - Dockerfile
+      - '--build-arg _NEXT_PUBLIC_SERVER=${_NEXT_PUBLIC_SERVER}'
+      - '--build-arg _NEXT_PUBLIC_SUPABASE_URL=${_NEXT_PUBLIC_SUPABASE_URL}'
+      - '--build-arg _NEXT_PUBLIC_SUPABASE_ANON_KEY=${_NEXT_PUBLIC_SUPABASE_ANON_KEY}'
     id: Build
   - name: gcr.io/cloud-builders/docker
     args:
@@ -42,6 +45,9 @@ substitutions:
   _PLATFORM: managed
   _SERVICE_NAME: cheviot-portfolio
   _DEPLOY_REGION: europe-west4
+  _NEXT_PUBLIC_SERVER: ''
+  _NEXT_PUBLIC_SUPABASE_URL: ''
+  _NEXT_PUBLIC_SUPABASE_ANON_KEY: ''
 tags:
   - gcp-cloud-build-deploy-cloud-run
   - gcp-cloud-build-deploy-cloud-run-managed
