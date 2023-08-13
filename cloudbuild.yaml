@@ -3,12 +3,12 @@ steps:
     args:
       - build
       - '--no-cache'
-      - >-
-        --build-arg _NEXT_PUBLIC_SERVER=$_NEXT_PUBLIC_SERVER
-      - >-
-        --build-arg _NEXT_PUBLIC_SUPABASE_URL=$_NEXT_PUBLIC_SUPABASE_URL
-      - >-
-        --build-arg _NEXT_PUBLIC_SUPABASE_ANON_KEY=$_NEXT_PUBLIC_SUPABASE_ANON_KEY
+      - --build-arg 
+      - _NEXT_PUBLIC_SERVER=$_NEXT_PUBLIC_SERVER
+      - --build-arg 
+      - _NEXT_PUBLIC_SUPABASE_URL=$_NEXT_PUBLIC_SUPABASE_URL
+      - --build-arg 
+      - _NEXT_PUBLIC_SUPABASE_ANON_KEY=$_NEXT_PUBLIC_SUPABASE_ANON_KEY
       - '--progress plain'
       - '-t'
       - >-
