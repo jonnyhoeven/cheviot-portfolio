@@ -25,8 +25,6 @@ ENV NEXT_PUBLIC_SUPABASE_URL=$_NEXT_PUBLIC_SUPABASE_URL
 ENV NEXT_PUBLIC_SUPABASE_ANON_KEY=$_NEXT_PUBLIC_SUPABASE_ANON_KEY
 ENV NEXT_SHARP_PATH=/app/node_modules/sharp
 
-RUN echo "building for public server: {$NEXT_PUBLIC_SERVER} using supabase {$NEXT_PUBLIC_SUPABASE_URL}." 
-RUN echo "Anon key: {$NEXT_PUBLIC_SUPABASE_ANON_KEY}." 
 RUN npm run build
 
 # Production image, copy all the files and run next
