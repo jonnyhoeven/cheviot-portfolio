@@ -49,9 +49,9 @@ substitutions:
   _PLATFORM: managed
   _SERVICE_NAME: cheviot-portfolio
   _DEPLOY_REGION: europe-west4
-  _NEXT_PUBLIC_SERVER: "testa"
-  _NEXT_PUBLIC_SUPABASE_URL: "testb"
-  _NEXT_PUBLIC_SUPABASE_ANON_KEY: "testc"
+  _NEXT_PUBLIC_SERVER: ""
+  _NEXT_PUBLIC_SUPABASE_URL: ""
+  _NEXT_PUBLIC_SUPABASE_ANON_KEY: ""
 tags:
   - gcp-cloud-build-deploy-cloud-run
   - gcp-cloud-build-deploy-cloud-run-managed
