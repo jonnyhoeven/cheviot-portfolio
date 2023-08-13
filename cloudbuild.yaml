@@ -9,9 +9,9 @@ steps:
       - .
       - '-f'
       - Dockerfile
-      - '--build-arg _NEXT_PUBLIC_SERVER=${_NEXT_PUBLIC_SERVER}'
-      - '--build-arg _NEXT_PUBLIC_SUPABASE_URL=${_NEXT_PUBLIC_SUPABASE_URL}'
-      - '--build-arg _NEXT_PUBLIC_SUPABASE_ANON_KEY=${_NEXT_PUBLIC_SUPABASE_ANON_KEY}'
+      - '--build-arg _NEXT_PUBLIC_SERVER=$_NEXT_PUBLIC_SERVER'
+      - '--build-arg _NEXT_PUBLIC_SUPABASE_URL=$_NEXT_PUBLIC_SUPABASE_URL'
+      - '--build-arg _NEXT_PUBLIC_SUPABASE_ANON_KEY=$_NEXT_PUBLIC_SUPABASE_ANON_KEY'
     id: Build
   - name: gcr.io/cloud-builders/docker
     args:
