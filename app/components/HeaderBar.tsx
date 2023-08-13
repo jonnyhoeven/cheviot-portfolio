@@ -1,6 +1,7 @@
 "use server";
 import Link from "next/link";
 import LogoutButton from "./LogoutButton";
+import * as Icons from "react-icons/fa";
 import { cookies } from "next/headers";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 
@@ -8,9 +9,28 @@ export default async function HeaderBar() {
   const supabase = createServerComponentClient({ cookies });
   const { data: menuitems } = await supabase
     .from("menuitems")
-    .select("id, link_text, link_url")
+    .select("id, icon, link_text, link_url, link_target")
     .order("sort_index")
     .eq("category", "header");
+
+  const { data: site_name } = await supabase
+    .from("strings")
+    .select("string_value")
+    .eq("string_name", "site_name")
+    .limit(1)
+    .single();
+
+  const DynamicFaIcon = ({ name, className = "" }) => {
+    //@todo fix typescript error
+    const IconComponent = Icons[name];
+
+    if (!IconComponent) {
+      // Return a default one
+      return <Icons.FaFire className={className} />;
+    }
+
+    return <IconComponent className={className} />;
+  };
 
   const {
     data: { user },
@@ -35,8 +55,11 @@ export default async function HeaderBar() {
           🔥
         </Link>
         {menuitems?.map((menuitem) => (
-          <div key={menuitem.id}>
-            <Link href={menuitem.link_url}>{menuitem.link_text}</Link>
+          <div className="flex">
+            <Link href={menuitem.link_url} target={menuitem.link_target}>
+              <DynamicFaIcon name={menuitem.icon} className="text-lg" />
+              {menuitem.link_text}
+            </Link>
           </div>
         ))}
         <div>
