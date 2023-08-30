@@ -6,7 +6,7 @@ I'm using Github Actions to run code/container inspection and tests.
 Google Cloud Build to build and deploy the app to Cloud Run.
 
 ## Next.js
-This uses the standalone build of Next.js. It is not using the Next.js server.
+This uses the standalone build of Next.js. It's not using the Next.js server.
 - includes supabase client on server and client side
 
 Before running the app, you must build the app with `npm run build`.
