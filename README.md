@@ -17,6 +17,7 @@ This uses Supabase as the backend. be sure to update env.local with your Supabas
 
 ## Development
 ```bash
+nvm use
 npm install
 npm run dev
 ```
@@ -54,3 +55,12 @@ docker build \
 docker run -p 3000:3000 nextjs-docker
 ```
 
+
+```bash
+docker run -d --name nocodb-postgres \
+-v "$(pwd)"/nocodb:/usr/app/data/ \
+-p 8080:8080 \
+-e NC_DB="postgresql://postgres:XDIt701tvhIduRn4@db.zsibwtqykbvqmwxhayyh.supabase.co:5432/postgres" \
+-e NC_AUTH_JWT_SECRET="9WKNwYaX/JxIOW66zUO9QaAgA6t9N4BmY3jNjdltY+rQ0gP7xJxBZpmOvQgXLGzyk83gPGGDTQJtTXqxm9Ri/Q==" \
+nocodb/nocodb:latest
+```
