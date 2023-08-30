@@ -10,7 +10,7 @@ This uses the standalone build of Next.js. It is not using the Next.js server.
 - includes supabase client on server and client side
 
 Before running the app, you must build the app with `npm run build`.
-after the build phase make sure to run `npm run export` to generate the static files and copy these to the standalone server build. The static part should be on a CDN or edge network.
+after the build phase make sure to run `npm run export` to generate the static files.
 
 ## Supabase
 This uses Supabase as the backend. be sure to update env.local with your Supabase credentials. [Seeds](./seed/seed.sql) can be found in the seed folder.
@@ -33,12 +33,12 @@ npm run start
 Code inspection workflow will add static files to the standalone server build before testing.
 Test framework is undetermined at this time.
 
-## Cloud build CD
+## Google Cloud build CD
 Cloud build will recieve a webhook from github and build the app. It will then deploy the app to Cloud Run.
 
 ## Docker
 The Dockerfile will import the static files during build for the standalone server.
-`SERVER` arg is needed during build so public env can be baked into standalone server.
+`SERVER` environment argument is needed during build so public env can be baked into standalone server.
 
 ```bash
 source .env.local
@@ -53,14 +53,4 @@ docker build \
 
 ```bash
 docker run -p 3000:3000 nextjs-docker
-```
-
-
-```bash
-docker run -d --name nocodb-postgres \
--v "$(pwd)"/nocodb:/usr/app/data/ \
--p 8080:8080 \
--e NC_DB="postgresql://postgres:XDIt701tvhIduRn4@db.zsibwtqykbvqmwxhayyh.supabase.co:5432/postgres" \
--e NC_AUTH_JWT_SECRET="9WKNwYaX/JxIOW66zUO9QaAgA6t9N4BmY3jNjdltY+rQ0gP7xJxBZpmOvQgXLGzyk83gPGGDTQJtTXqxm9Ri/Q==" \
-nocodb/nocodb:latest
 ```
