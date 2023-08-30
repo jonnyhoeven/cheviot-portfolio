@@ -158,7 +158,6 @@ values
   '_blank',
   true
 ),
-('footer', 0, null, 'Blog', '/blog', null, true),
 (
   'footer',
   1,
@@ -184,16 +183,7 @@ values
   'Privacy Policy',
   '/privacy',
   null,
-  true
-),
-(
-  'footer',
-  4,
-  null,
-  'Contact',
-  '/contact',
-  null,
-  true
+true
 );
 
 drop table if exists strings;
